@@ -322,6 +322,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/Forensics2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/04/Forensics2/" class="post-title-link" itemprop="url">Forensics2</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-04 16:28:29 / 修改时间：17:53:13" itemprop="dateCreated datePublished" datetime="2019-04-04T16:28:29+08:00">2019-04-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;本以为有了上个题目的经验，这次会好做一点，没想到并不是手到擒来，倒也比之前有突破的方向了。</p>
+<h2 id="各种协议"><a href="#各种协议" class="headerlink" title="各种协议"></a>各种协议</h2><p>&emsp;&emsp;数据包中出现了几个协议，查阅了一下主要作用。</p>
+<ul>
+<li><p>ICMP（Internet Control Message Protocol）是Internet控制报文协议。它是TCP/IP协议簇的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。从技术角度来说，ICMP就是一个“错误侦测与回报机制”，其目的就是让我们能够检测网络的连线状况，也能确保连线的准确性。</p>
+</li>
+<li><p>ARP（Address Resolution Protocol）地址解析协议，是根据IP地址获取物理地址的一个TCP/IP协议。使用地址解析协议，可根据网络层IP数据包包头中的IP地址信息解析出目标硬件地址（MAC地址）信息，以保证通信的顺利进行。ARP命令可用于查询本机ARP缓存中IP地址和MAC地址的对应关系、添加或删除静态对应关系等。</p>
+</li>
+<li><p>SSH（Secure Shell）安全外壳协议，是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。</p>
+</li>
+<li><p>NFS（Network File System）网络文件系统，它允许网络中的计算机之间通过TCP/IP网络共享资源。在NFS的应用中，本地NFS的客户端应用可以透明地读写位于远端NFS服务器上的文件，就像访问本地文件一样。</p>
+</li>
+</ul>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>1）题目中给出提示:something about file，NFS网络文件系统是关于文件访问的，寻找flag很大可能与此有关。</p>
+<p>2）数据包分析<br>  <img src="/images/Forensics2/1.png" alt></p>
+<ul>
+<li>前8行，IP为10.0.0.22的主机ping了IP为10.0.0.2的主机四次，均成功得到响应。</li>
+<li>9,10行，通过ARP协议，根据IP获取物理地址。</li>
+<li>11-13行，三次握手建立TCP连接。</li>
+<li>之后，建立SSH安全连接。</li>
+<li>通过NFS协议进行文件的交互。（貌似是这样，emmm…）</li>
+</ul>
+<p>3）NFS协议分析</p>
+<ul>
+<li><p>过滤出NFS协议</p>
+<p><img src="/images/Forensics2/2.png" alt></p>
+</li>
+<li><p>376行，10.0.0.22回复10.0.0.2 [Allowed:RD LU MD XT DL]，即授予10.0.0.2对文件进行的读（READ，RD）、查找（LOOKUP，LU）、修改（MODIFY，MD）、增加（EXTEND，XT）和删除（DELETE，DL）的权限。</p>
+</li>
+<li><p>378行，查找flag.txt.gz是否存在。</p>
+</li>
+<li><p>379行，返回查找状态，未找到该文件。</p>
+</li>
+<li><p>391行，打开flag.txt.gz文件（文件本不存在，应该是先建立后打开的）。</p>
+</li>
+<li><p>400行，请求对文件进行写操作。</p>
+</li>
+<li><p>402行，请求关闭文件。</p>
+</li>
+<li><p>分析400行中进行的写内容，将data导出为zip文件，解压后得到一文本文档，内有flag。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/Forensics1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1573,7 +1755,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1894,7 +2076,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
