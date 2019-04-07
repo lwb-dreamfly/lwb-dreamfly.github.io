@@ -322,6 +322,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/Another 01Game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/06/Another 01Game/" class="post-title-link" itemprop="url">Another 01Game</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-06 10:55:30" itemprop="dateCreated datePublished" datetime="2019-04-06T10:55:30+08:00">2019-04-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-07 17:28:24" itemprop="dateModified" datetime="2019-04-07T17:28:24+08:00">2019-04-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;这个题很有意思、、、但是如果题干给的提示不这么详细，那就不好玩了、、、</p>
+<h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><p>&emsp;&emsp;二维码（Quick Response Code，QR Code），以下引用自百度百科。</p>
+<blockquote>
+<p>&emsp;&emsp;二维码又称二维条码，常见的二维码为QR Code，QR全称Quick Response，是一个近几年来移动设备上超流行的一种编码方式，它比传统的Bar Code条形码能存更多的信息，也能表示更多的数据类型。<br>&emsp;&emsp;二维条码/二维码（2-dimensional bar code）是用某种特定的几何图形按一定规律在平面（二维方向上）分布的黑白相间的图形记录数据符号信息的；<strong>在代码编制上巧妙地利用构成计算机内部逻辑基础的“0”、“1”比特流的概念，使用若干个与二进制相对应的几何形体来表示文字数值信息</strong>，通过图象输入设备或光电扫描设备自动识读以实现信息自动处理：它具有条码技术的一些共性：每种码制有其特定的字符集；每个字符占有一定的宽度；具有一定的校验功能等。</p>
+</blockquote>
+<p>&emsp;&emsp;二维码，是和二进制数0,1有密切关联的。</p>
+<h2 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h2><p>&emsp;&emsp;题干中明确给出了，那一串数字有1369个0和1，是37的平方，可以构成边长为37个数字的正方形二维码（虽然题干中直接给出了结论，但是这种分析的思想一定要具备，好好学习）。然后通过扫描二维码又可以得到一串二进制01字符串，进行ASCII解码得出结果。</p>
+<h3 id="1）绘制二维码"><a href="#1）绘制二维码" class="headerlink" title="1）绘制二维码"></a>1）绘制二维码</h3><p>&emsp;&emsp;最初尝试利用C++在codeblock中打印输出二维码（因为之前写过黑白棋游戏，打印棋盘最开始的想法和这个类似，所以优先想到用代码打印图形的方式来绘制二维码），但是尝试了好几次，又是调背景色又是调字体大小又是换方块大小又是01互换，都没能扫出信息，应该是每行之间的行间隔太大，识别不成二维码。然后又打开eclipse进行尝试，成功得到可扫描的二维码（java是最好用的语言！！）。下面将处理代码贴出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Qrcode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	    String s=<span class="string">"00...0110"</span>;<span class="comment">//此处为题中给出的二进制数字串，太长了，省略写</span></span><br><span class="line">	    <span class="keyword">int</span> f=<span class="number">0</span>;</span><br><span class="line">	    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)</span><br><span class="line">	    &#123;</span><br><span class="line">	        f++;<span class="comment">//■ ■ █ ▇ ▉ ▉ █ 这是用来输出二维码的黑色的方块，从中试了试，挑了个能扫出来信息的</span></span><br><span class="line">	        <span class="keyword">if</span>(s.charAt(i)==<span class="string">'0'</span>) System.out.print(<span class="string">"██"</span>);<span class="comment">//█</span></span><br><span class="line">	        <span class="keyword">else</span> System.out.print(<span class="string">"  "</span>);</span><br><span class="line">	        <span class="keyword">if</span>(f%<span class="number">37</span>==<span class="number">0</span>) System.out.println();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;最开始得到二维码后，感觉能成，但是字符太大了，一个页面装不下，没法直接扫，将字体调小后成功得到二维码。<br><img src="/images/Another 01Game/qrcode.png" alt title="QR Code"></p>
+<h3 id="2-处理01字符串"><a href="#2-处理01字符串" class="headerlink" title="2)处理01字符串"></a>2)处理01字符串</h3><p>&emsp;&emsp;掏出手机，扫描二维码，得到一串01字符串，该字符串长度为189，可以被7整除，按照ASCII的编码方式进行转换。直接写个函数，打印输出，控制台得到flag，搞定。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">flag</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String s=<span class="string">"1100...101"</span>  ;<span class="comment">//这是扫描二维码得到的一串二进制数字串，也挺长的</span></span><br><span class="line">		System.out.println(s.length());<span class="comment">//189  可以被7整除 ASCII</span></span><br><span class="line">		<span class="keyword">int</span> a[]= &#123;<span class="number">64</span>,<span class="number">32</span>,<span class="number">16</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (len &lt; s.length()) &#123;</span><br><span class="line">			<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++) &#123;<span class="comment">//7位一组</span></span><br><span class="line">				<span class="keyword">if</span> (s.charAt(len++) == <span class="string">'1'</span>) &#123;</span><br><span class="line">					sum += a[i];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.print((<span class="keyword">char</span>) sum);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p>&emsp;&emsp;一道题要涉及到很多方方面面的知识，还需要多积累多练习啊~从最开始看到题时的一无所知，无从下手，到现在写下这篇博客，攻克下一个难关还是有些小喜悦的，但是我的进度还是有点慢，加油加油。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/Birthday/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1734,148 +1900,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/测试一哈/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/29/测试一哈/" class="post-title-link" itemprop="url">测试一哈</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-29 12:21:16 / 修改时间：13:33:52" itemprop="dateCreated datePublished" datetime="2019-03-29T12:21:16+08:00">2019-03-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="这是第一个文章"><a href="#这是第一个文章" class="headerlink" title="这是第一个文章"></a>这是第一个文章</h2><p>哈哈哈哈 额貌似或暗示哦啊 </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1923,7 +1947,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2244,7 +2268,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Birthday");titles.push("PkCrack");titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Another 01Game");titles.push("Birthday");titles.push("PkCrack");titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
