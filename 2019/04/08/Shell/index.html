@@ -96,23 +96,28 @@
 
 
 
-  <meta name="description" content="遇见最好的自己，然后狠狠拥抱你。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DreamFly">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;又是分析数据包的题，本以为之前做过几个了，这个应该会比较容易解决，没想到还是费了好大劲儿。说到底还是理解不深入，这种类型的题，还需要多练呐，欠缺经验和积累。 &amp;emsp;&amp;emsp;打开数据包，扫了一遍，TCP协议居多，开头就是个广播寻找IP地址的，但是貌似和本题没有啥关系，然后三次握手，结尾四次挥手。没有发现NFS和频繁的HTTP协议，即没有进行文件交互，也没有进行htm">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/Shell/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="遇见最好的自己，然后狠狠拥抱你。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;又是分析数据包的题，本以为之前做过几个了，这个应该会比较容易解决，没想到还是费了好大劲儿。说到底还是理解不深入，这种类型的题，还需要多练呐，欠缺经验和积累。 &amp;emsp;&amp;emsp;打开数据包，扫了一遍，TCP协议居多，开头就是个广播寻找IP地址的，但是貌似和本题没有啥关系，然后三次握手，结尾四次挥手。没有发现NFS和频繁的HTTP协议，即没有进行文件交互，也没有进行htm">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/Shell/shell.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/08/Shell/images/Shell/followTcp.png">
+<meta property="og:updated_time" content="2019-04-08T07:56:38.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DreamFly">
-<meta name="twitter:description" content="遇见最好的自己，然后狠狠拥抱你。">
+<meta name="twitter:title" content="Shell">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;又是分析数据包的题，本以为之前做过几个了，这个应该会比较容易解决，没想到还是费了好大劲儿。说到底还是理解不深入，这种类型的题，还需要多练呐，欠缺经验和积累。 &amp;emsp;&amp;emsp;打开数据包，扫了一遍，TCP协议居多，开头就是个广播寻找IP地址的，但是貌似和本题没有啥关系，然后三次握手，结尾四次挥手。没有发现NFS和频繁的HTTP协议，即没有进行文件交互，也没有进行htm">
+<meta name="twitter:image" content="http://yoursite.com/images/Shell/shell.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/03/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/08/Shell/">
 
 
 
@@ -122,7 +127,7 @@
   };
 </script>
 
-  <title>归档 | DreamFly</title>
+  <title>Shell | DreamFly</title>
   
 
 
@@ -170,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,7 +264,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -301,241 +306,189 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/Shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Shell
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-08 10:03:28 / 修改时间：15:56:38" itemprop="dateCreated datePublished" datetime="2019-04-08T10:03:28+08:00">2019-04-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/31/科学上网/" itemprop="url">
             
-              <span itemprop="name">科学上网</span>
-            
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-31T11:36:46+08:00" content="2019-03-31">
-          03-31
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/30/LSB/" itemprop="url">
-            
-              <span itemprop="name">LSB</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T20:54:51+08:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/30/读后感/" itemprop="url">
-            
-              <span itemprop="name">《So you want to work in security?》读后感</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T10:27:46+08:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>&emsp;&emsp;又是分析数据包的题，本以为之前做过几个了，这个应该会比较容易解决，没想到还是费了好大劲儿。说到底还是理解不深入，这种类型的题，还需要多练呐，欠缺经验和积累。</p>
+<p>&emsp;&emsp;打开数据包，扫了一遍，TCP协议居多，开头就是个广播寻找IP地址的，但是貌似和本题没有啥关系，然后三次握手，结尾四次挥手。没有发现NFS和频繁的HTTP协议，即没有进行文件交互，也没有进行html页面的传输。之前做这种流量分析题，有用的信息可能会出现在data属性中，好在数据包列表区中的内容不太多，一行一行的看下来也不难，于是一个一个点开看，中间发现了一些指令类的东西，然后在第68行，发现了可疑字符串。</p>
+<p><img src="/images/Shell/shell.png" alt></p>
+<p>&emsp;&emsp;后来发现，可以追踪的TCP流，这要比一个一个看好整多了…</p>
+<p><img src="images/Shell/followTcp.png" alt></p>
+<p>&emsp;&emsp;通过shell命令，进行了一系列操作，经查阅知，这一可疑字符串经base64加密，大小写字母转换（swapcase()）所得。所以先把字符串的字母大小写转换，然后经过base64解密得到flag。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/29/测试一哈/" itemprop="url">
-            
-              <span itemprop="name">测试一哈</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-29T12:21:16+08:00" content="2019-03-29">
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/29/hello-world/" itemprop="url">
-            
-              <span itemprop="name">Hello World</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-29T10:41:07+08:00" content="2019-03-29">
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CTF/" rel="tag"># CTF</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/07/Another 01Game/" rel="next" title="Another 01Game">
+                <i class="fa fa-chevron-left"></i> Another 01Game
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -782,6 +735,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -879,13 +836,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = ''.length > 0
-      var isArchive = 'true' === 'true'
+      var isPost = 'Shell'.length > 0
+      var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = ''
+        var title = 'Shell'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -893,7 +850,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
