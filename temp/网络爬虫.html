@@ -96,27 +96,29 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;好像涉及密码学中的某些知识，又是新探索。 密码学中的攻击模式&amp;emsp;&amp;emsp;明文（Plaintext），在密码学中是指传送方想要接受方获得的可读信息。明文经过加密所产生的信息被称为密文，而密文经过解密而还原得来得信息被称为明文。 &amp;emsp;&amp;emsp;密文（ciphertext或cyphertext），由明文经过加密算法所产生的。因为密文是一种除非使用恰当的算法进">
-<meta name="keywords" content="CTF">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PkCrack">
-<meta property="og:url" content="http://yoursite.com/2019/04/05/PkCrack/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。 关于爬虫&amp;emsp;&amp;emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。 &amp;emsp;&amp;emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和">
+<meta name="keywords" content="网络爬虫">
+<meta property="og:type" content="website">
+<meta property="og:title" content="网络爬虫简单上手">
+<meta property="og:url" content="http://yoursite.com/temp/网络爬虫.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;好像涉及密码学中的某些知识，又是新探索。 密码学中的攻击模式&amp;emsp;&amp;emsp;明文（Plaintext），在密码学中是指传送方想要接受方获得的可读信息。明文经过加密所产生的信息被称为密文，而密文经过解密而还原得来得信息被称为明文。 &amp;emsp;&amp;emsp;密文（ciphertext或cyphertext），由明文经过加密算法所产生的。因为密文是一种除非使用恰当的算法进">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。 关于爬虫&amp;emsp;&amp;emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。 &amp;emsp;&amp;emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/PkCrack.png">
-<meta property="og:updated_time" content="2019-04-05T04:26:31.977Z">
+<meta property="og:image" content="http://yoursite.com/images/Web%20Crawler/jar.png">
+<meta property="og:image" content="http://yoursite.com/images/Web%20Crawler/iciba.png">
+<meta property="og:image" content="http://yoursite.com/images/Web%20Crawler/res.png">
+<meta property="og:updated_time" content="2019-04-09T11:11:15.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PkCrack">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;好像涉及密码学中的某些知识，又是新探索。 密码学中的攻击模式&amp;emsp;&amp;emsp;明文（Plaintext），在密码学中是指传送方想要接受方获得的可读信息。明文经过加密所产生的信息被称为密文，而密文经过解密而还原得来得信息被称为明文。 &amp;emsp;&amp;emsp;密文（ciphertext或cyphertext），由明文经过加密算法所产生的。因为密文是一种除非使用恰当的算法进">
-<meta name="twitter:image" content="http://yoursite.com/images/PkCrack.png">
+<meta name="twitter:title" content="网络爬虫简单上手">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。 关于爬虫&amp;emsp;&amp;emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。 &amp;emsp;&amp;emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和">
+<meta name="twitter:image" content="http://yoursite.com/images/Web%20Crawler/jar.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/05/PkCrack/">
+  <link rel="canonical" href="http://yoursite.com/temp/网络爬虫.html">
 
 
 
@@ -126,7 +128,7 @@
   };
 </script>
 
-  <title>PkCrack | DreamFly</title>
+  <title>网络爬虫简单上手 | DreamFly</title>
   
 
 
@@ -305,202 +307,94 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/PkCrack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">PkCrack
+<h1 class="post-title" itemprop="name headline">网络爬虫简单上手
 
-              
-            
-          </h1>
-        
+</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
+<div class="post-meta">
+  
+  
 
-            
-            
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
 
-              
-                
-              
+</div>
 
-              <time title="创建时间：2019-04-05 12:26:00 / 修改时间：12:26:31" itemprop="dateCreated datePublished" datetime="2019-04-05T12:26:00+08:00">2019-04-05</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>&emsp;&emsp;好像涉及密码学中的某些知识，又是新探索。</p>
-<h2 id="密码学中的攻击模式"><a href="#密码学中的攻击模式" class="headerlink" title="密码学中的攻击模式"></a>密码学中的攻击模式</h2><p>&emsp;&emsp;明文（Plaintext），在密码学中是指传送方想要接受方获得的可读信息。明文经过加密所产生的信息被称为密文，而密文经过解密而还原得来得信息被称为明文。</p>
-<p>&emsp;&emsp;密文（ciphertext或cyphertext），由明文经过加密算法所产生的。因为密文是一种除非使用恰当的算法进行解密，人类或计算机不可以直接阅读理解的明文的形态，所以可以被理解为加密的信息。解密与加密是相对的，即一种使使密文转化为明文的过程。</p>
-<p>&emsp;&emsp;由上得出理解，明文就是能看得见的可读的信息，密文就是加密后不想被不知道密码的人看见的信息。明文与密文可以通过加密解密来相互转换。</p>
-<h3 id="1）唯密文攻击"><a href="#1）唯密文攻击" class="headerlink" title="1）唯密文攻击"></a>1）唯密文攻击</h3><p>&emsp;&emsp;在只知道加密后的文字（密文）且不知道明文的情况下进行攻击。</p>
-<h3 id="2）已知明文攻击"><a href="#2）已知明文攻击" class="headerlink" title="2）已知明文攻击"></a>2）已知明文攻击</h3><p>&emsp;&emsp;指攻击者掌握了某段明文和对应的密文，通过若干明密文对获取加密方式，从而破解密文。</p>
-<h3 id="3）选择明文攻击"><a href="#3）选择明文攻击" class="headerlink" title="3）选择明文攻击"></a>3）选择明文攻击</h3><p>&emsp;&emsp;攻击者拥有加密机的访问权限，可构造任意明文所对应的密文。攻击者占有加密机，可以任意选择一定数量的明文，让加密机进行加密，得到响应的密文。攻击者只能使用加密机，并不知道加密算法。攻击者可以利用明文加密成密码的过程，来获得关于加密算法的一些信息，甚至可能直接获得解密用的钥匙。</p>
-<h3 id="4）选择密文攻击"><a href="#4）选择密文攻击" class="headerlink" title="4）选择密文攻击"></a>4）选择密文攻击</h3><p>&emsp;&emsp;攻击者掌握对解密机的访问权限，可构造任意密文所对应的明文。与选择明文攻击类似，同样可以获取明密文对，进而获取解密的信息。</p>
-<h2 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h2><ul>
-<li><p>网上下载了个Advanced Zip Password Recovery。</p>
-</li>
-<li><p>讲题目中提供的连个文件下载到本地。sqlmap_plain.zip和sqlmap.zip（加密，内有保存着flag的文件）</p>
-</li>
-<li><p>加密的zip文件处选择sqlmap.zip路径</p>
-</li>
-<li><p>攻击类型选择明文攻击。</p>
-</li>
-<li><p>设置明文文件路径，即sqlmap_plain.zip的路径。</p>
-</li>
-<li><p>保存解密后的文件，解压得到flag。</p>
-<p><img src="/images/PkCrack.png" alt></p>
-<p>PS：使用的软件为破解版，官方正版不注册无法查看秘钥，而且只能解密一个文件。</p>
-</li>
-</ul>
+      <div class="post-body">
+        
+        
+          <p>&emsp;&emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。</p>
+<h2 id="关于爬虫"><a href="#关于爬虫" class="headerlink" title="关于爬虫"></a>关于爬虫</h2><p>&emsp;&emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。</p>
+<p>&emsp;&emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和垂直型，前者是指爬取数据范围广，在整个互联网内获取数据，像谷歌百度之类。后者是指针对某一网站或某一类型数据的抓取，比如专门爬取微博信息的爬虫等。</p>
+<p>&emsp;&emsp;爬虫就是取代浏览器，向网络上的服务器发送请求，并获取服务器中的资源来取得我们想要的信息。随便一搜爬虫的实现，Python的教程居多，但是java也可以简单上手。</p>
+<h2 id="上手准备"><a href="#上手准备" class="headerlink" title="上手准备"></a>上手准备</h2><p><strong>工具：</strong> Eclipse、httpclient和jsoup的相应jar包</p>
+<p><img src="/images/Web Crawler/jar.png" alt></p>
+<p><strong>HttpClient简介：</strong> HttpClient是apache组织下面的一个用于处理HTTP请求和响应的开源工具。它不是一个浏览器，而是一个类库。它在JDK的基本类库基础上做了更好的封装。</p>
+<p><strong>HttpClient抓取网页流程：</strong> </p>
+<ol>
+<li>创建HttpClient对象。</li>
+<li>创建请求方法的实例，并制定请求URL。如果需要发送GET请求，创建HTTPGet对象；如果需要发送POST请求，创建HttpPost对象。</li>
+<li>如果需要发送请求参数，可调用HttpGet、HttpPost共同的setParams（HttpParams params）方法来添加请求参数；对于HttpPost对象而言，也可调用setEntity（HttpEntity entity）方法来设置请求参数。</li>
+</ol>
+<p><strong>Jsoup简介：</strong> jsoup是一款javaHTML解析器，可以直接解析URL地址，HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</p>
+<p><strong>Jsoup处理网页流程：</strong> </p>
+<ol>
+<li>从一个URL，文件或字符串中解析HTML。</li>
+<li>使用DOM或CSS选择器来查找、取出数据。</li>
+<li>可操作HTML元素、属性、文本。</li>
+</ol>
+<p>&emsp;&emsp;通常在写爬虫程序时，httpclient集合jsoup共同使用即可实现不错的爬虫系统。<strong>httpclient负责模拟浏览器发送请求，jsoup负责解析httpclient请求返回的HTML页面，解析获取需要的数据。</strong></p>
+<h2 id="简单上手"><a href="#简单上手" class="headerlink" title="简单上手"></a>简单上手</h2><p>&emsp;&emsp;写一个简单的英汉互译系统练手，一般在翻译网站上查询单词的意思时，是在网址后拼接待查询单词向服务器提交，例如爱词霸，查询hello的汉语意思时，地址栏显示的网址为：<a href="http://www.iciba.com/hello" target="_blank" rel="noopener">http://www.iciba.com/hello</a> 利用这可特性，结合上面的基础知识可以实现简单的单词释义查询。<br><img src="/images/Web Crawler/iciba.png" alt><br>下面将实现代码列出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		HttpClient hClient=<span class="keyword">new</span> DefaultHttpClient();</span><br><span class="line">		<span class="comment">//设置响应时间，设置传输源码时间，设置代理服务器（防止被识别ip加入黑名单而无法爬取）</span></span><br><span class="line">		<span class="comment">//百度 代理服务器ip 即可得到代理服务器  本例可不使用</span></span><br><span class="line">		<span class="comment">/*hClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 10000)</span></span><br><span class="line"><span class="comment">		.setParameter(CoreConnectionPNames.SO_TIMEOUT, 10000)</span></span><br><span class="line"><span class="comment">		.setParameter(ConnRouteParams.DEFAULT_PROXY, new HttpHost("116.209.58.123",9999 ));</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="comment">//爬虫URL大部分是get请求，创建get请求对象</span></span><br><span class="line">		HttpGet hget=<span class="keyword">new</span> HttpGet(<span class="string">"http://www.iciba.com/hello"</span>);</span><br><span class="line">		<span class="comment">//向传智播客网站发送请求 获取网页源码</span></span><br><span class="line">		HttpResponse response=hClient.execute(hget);</span><br><span class="line">		<span class="comment">//EntityUtils工具类把网页实体转换成字符串</span></span><br><span class="line">		String content=EntityUtils.toString(response.getEntity(),<span class="string">"utf-8"</span>);</span><br><span class="line">		<span class="comment">//jsoup解析网页</span></span><br><span class="line">		Document doc = Jsoup.parse(content);</span><br><span class="line">		<span class="comment">//使用元素选择器选择网页内容li.lione a</span></span><br><span class="line">		Elements select = doc.select(<span class="string">"li.clearfix p"</span>);</span><br><span class="line">		System.out.println(select.text());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;简单解析处理后的效果：<br><img src="/images/Web Crawler/res.png" alt></p>
 
+        
+      </div>
+      
+      
       
     </div>
-
     
 
+
+
     
     
     
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/CTF/" rel="tag"># CTF</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/04/04/Forensics2/" rel="next" title="Forensics2">
-                <i class="fa fa-chevron-left"></i> Forensics2
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/06/Birthday/" rel="prev" title="Birthday">
-                Birthday <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
   </div>
 
 
@@ -616,7 +510,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#密码学中的攻击模式"><span class="nav-number">1.</span> <span class="nav-text">密码学中的攻击模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）唯密文攻击"><span class="nav-number">1.1.</span> <span class="nav-text">1）唯密文攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）已知明文攻击"><span class="nav-number">1.2.</span> <span class="nav-text">2）已知明文攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）选择明文攻击"><span class="nav-number">1.3.</span> <span class="nav-text">3）选择明文攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4）选择密文攻击"><span class="nav-number">1.4.</span> <span class="nav-text">4）选择密文攻击</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题过程"><span class="nav-number">2.</span> <span class="nav-text">解题过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于爬虫"><span class="nav-number">1.</span> <span class="nav-text">关于爬虫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上手准备"><span class="nav-number">2.</span> <span class="nav-text">上手准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单上手"><span class="nav-number">3.</span> <span class="nav-text">简单上手</span></a></li></ol></div>
             
 
           </div>
@@ -885,13 +779,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'PkCrack'.length > 0
+      var isPost = '网络爬虫简单上手'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'PkCrack'
+        var title = '网络爬虫简单上手'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
