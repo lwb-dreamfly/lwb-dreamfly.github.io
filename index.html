@@ -322,6 +322,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/Calculator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/11/Calculator/" class="post-title-link" itemprop="url">Calculator</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-11 11:33:38 / 修改时间：16:56:39" itemprop="dateCreated datePublished" datetime="2019-04-11T11:33:38+08:00">2019-04-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;最开始，看到题，1.5s内计算出结果并提交，人工计算几乎是不可能的（对我来讲），还以为有其他蹊跷方法不需要算出结果就能获得flag，没想到真的是提交结果后给出flag。</p>
+<h2 id="网络爬虫"><a href="#网络爬虫" class="headerlink" title="网络爬虫"></a>网络爬虫</h2><p>&emsp;&emsp;抱着试试看的态度，打算计算出结果提交一下试试，题中给的建议是使用Python request库，奈何我没有学过Python，现在学也不是立马就能拿来用的，不如先用java试试吧。</p>
+<p>&emsp;&emsp;要想使用计算机直接计算结果并提交，需要获知运算表达式，并解析表达式，使计算机能够计算出结果，然后提交给服务器，并获取服务器的返回信息，因为flag很可能就在返回信息中。题中给出的思考：服务器怎么知道获得算式的和提交答案的是一个人？经过试验，只要获取表达式和提交结果是在同一个浏览器中进行（没有清除过缓存，本地的cookie和服务器端的session通过sessionId对应）就可以，而网络爬虫可以很好的满足以上条件（网络爬虫就是模拟一个浏览器向服务器发出请求并接收返回信息），正好对爬虫有一丁点儿了解，就拿来用用了。</p>
+<h2 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h2><p>&emsp;&emsp;先把解题用的代码列出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		HttpClient hc=<span class="keyword">new</span> DefaultHttpClient();</span><br><span class="line">		HttpGet hg=<span class="keyword">new</span> HttpGet(<span class="string">"http://123.207.149.64:23331/calculator/"</span>);<span class="comment">//表达式页面</span></span><br><span class="line">		HttpResponse response=hc.execute(hg);</span><br><span class="line">		String content=EntityUtils.toString(response.getEntity(),<span class="string">"utf-8"</span>);</span><br><span class="line">		<span class="comment">//System.out.println(content);//输出网页源码</span></span><br><span class="line">		Document doc = Jsoup.parse(content);</span><br><span class="line">		Elements select = doc.select(<span class="string">"form span"</span>);<span class="comment">//取出表达式</span></span><br><span class="line">		String exp=select.text();</span><br><span class="line">		System.out.println(exp);<span class="comment">//输出算术表达式</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//将字符串分解，转化为四个整数型数据</span></span><br><span class="line">		<span class="keyword">int</span> a[]= &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> index = exp.indexOf(<span class="string">" "</span>);</span><br><span class="line">			a[i] = Integer.parseInt(exp.substring(<span class="number">0</span>, index));</span><br><span class="line">			<span class="keyword">if</span> (i != <span class="number">3</span>)</span><br><span class="line">				exp = exp.substring(index + <span class="number">3</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		String res=Res(a);<span class="comment">//调用求值函数</span></span><br><span class="line">		</span><br><span class="line">		String url=<span class="string">"http://123.207.149.64:23331/calculator/?answer="</span>+res;<span class="comment">//将结果拼接到ip地址 提交给服务器</span></span><br><span class="line">		<span class="comment">//System.out.println(url);</span></span><br><span class="line">		hg=<span class="keyword">new</span> HttpGet(url);</span><br><span class="line">		response=hc.execute(hg);</span><br><span class="line">		content=EntityUtils.toString(response.getEntity(),<span class="string">"utf-8"</span>);</span><br><span class="line">		System.out.println(content);<span class="comment">//输出含义flag的网页源码</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">Res</span><span class="params">(<span class="keyword">int</span> a[])</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		HttpClient hc=<span class="keyword">new</span> DefaultHttpClient();</span><br><span class="line">		<span class="comment">//将表达式中的数字 拼接到url中 使用搜狗来获取结果</span></span><br><span class="line">		String url=<span class="string">"https://www.sogou.com/web?query="</span>+a[<span class="number">0</span>]+<span class="string">"+%2B+"</span>+a[<span class="number">1</span>]+<span class="string">"+*+"</span>+a[<span class="number">2</span>]+<span class="string">"+-+"</span>+a[<span class="number">3</span>]+<span class="string">"+%3D&amp;_asf=www.sogou.com&amp;_ast=&amp;w=01019900&amp;p=40040100&amp;ie=utf8&amp;from=index-nologin&amp;s_from=index&amp;sut=1447&amp;sst0=1554691893839&amp;lkt=0%2C0%2C0&amp;sugsuv=00081C1D700880375CA00C16F9B87217&amp;sugtime=1554691893839"</span>;</span><br><span class="line">		System.out.println(url);</span><br><span class="line">		HttpGet hg=<span class="keyword">new</span> HttpGet(url);</span><br><span class="line">		HttpResponse response=hc.execute(hg);</span><br><span class="line">		String content=EntityUtils.toString(response.getEntity(),<span class="string">"utf-8"</span>);</span><br><span class="line">		Document doc = Jsoup.parse(content);</span><br><span class="line">		Elements select = doc.select(<span class="string">"div.calcresult"</span>);</span><br><span class="line">		String res=select.text();</span><br><span class="line">		res=res.replaceAll(<span class="string">" "</span>, <span class="string">""</span>);</span><br><span class="line">		System.out.println(res);</span><br><span class="line">		<span class="keyword">int</span> beginIndex=res.lastIndexOf(<span class="string">"="</span>);</span><br><span class="line">		res=res.substring(beginIndex+<span class="number">2</span>);</span><br><span class="line">		System.out.println(res);</span><br><span class="line">		<span class="keyword">return</span> res;	<span class="comment">//返回最终结果</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;步骤简要概括：</p>
+<ul>
+<li><p>使用爬虫将表达式爬取</p>
+</li>
+<li><p>处理表达式，经多次测试，发现每次运算都是四个整数，且运算符是固定的，只需分离出数字即可。</p>
+</li>
+<li><p>尝试使用java直接计算结果，数字太大，无法计算得到正确结果。</p>
+</li>
+<li><p>发现可以直接搜索表达式来得到结果，百度，搜狗都可以</p>
+<p><img src="/images/Calculator/sougou.png" alt></p>
+</li>
+<li><p>最开始使用百度，通过拼接ip地址，达到实现计算表达式的目的，但是百度有反爬虫措施，无法爬取结果。</p>
+</li>
+<li><p>而后使用搜狗，原理一样，可以爬取结果。</p>
+<p><img src="/images/Calculator/res.png" alt></p>
+</li>
+<li><p>经过分析，发现提交给服务器的页面，其通过在ip地址后拼接结果来传值，于是将结果拼接到ip后提交。</p>
+</li>
+<li><p>获取服务器的返回页面源码。</p>
+<p><img src="/images/Calculator/flag-ht.png" alt></p>
+</li>
+<li><p>将源码保存为html文件得到如下页面，得到flag。</p>
+<p><img src="/images/Calculator/flag.png" alt></p>
+<p>PS:这么做走了弯路，在提交结果前，两次使用爬虫获取页面内容（第一次获取表达式，第二次获取运算结果），通过爬虫获取计算结果是比较耗费时间的（相当于那1.5s来说），所以我试了三次才提交成功，前两次都是用时1.6s多，返回超时页面，第三次运气好，1.3s搞定，成功获取flag。</p>
+</li>
+</ul>
+<h2 id="简要完善"><a href="#简要完善" class="headerlink" title="简要完善"></a>简要完善</h2><p>&emsp;&emsp;上面提到，多次使用爬虫并不能每次都可以成功提交，且失败几率较大，因为在获取运算结果上耗费了不少时间，后来想到，可以使用大整数运算来计算结果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BigInteger <span class="title">Operation</span><span class="params">(String exp)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> index = exp.indexOf(<span class="string">" "</span>);</span><br><span class="line">	BigInteger n1=<span class="keyword">new</span> BigInteger(exp.substring(<span class="number">0</span>, index));</span><br><span class="line">	exp = exp.substring(index + <span class="number">3</span>);</span><br><span class="line">	index = exp.indexOf(<span class="string">" "</span>);</span><br><span class="line">	BigInteger n2=<span class="keyword">new</span> BigInteger(exp.substring(<span class="number">0</span>, index));</span><br><span class="line">	exp = exp.substring(index + <span class="number">3</span>);</span><br><span class="line">	index = exp.indexOf(<span class="string">" "</span>);</span><br><span class="line">	BigInteger n3=<span class="keyword">new</span> BigInteger(exp.substring(<span class="number">0</span>, index));</span><br><span class="line">	exp = exp.substring(index + <span class="number">3</span>);</span><br><span class="line">	index = exp.indexOf(<span class="string">" "</span>);</span><br><span class="line">	BigInteger n4=<span class="keyword">new</span> BigInteger(exp.substring(<span class="number">0</span>, index));</span><br><span class="line">	<span class="keyword">return</span> n2.multiply(n3).add(n1).subtract(n4);<span class="comment">//n2*n3+n1-n4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;经测试，使用大整数运算的方法来处理，要快不少，每次都可以成功提交。将此方法放到字符串分解之前，注释掉使用爬虫方法获取结果的语句即可。另外，表达式获取和结果提交，要使用同一个HttpClient来执行，这样才可以识别成同一人，换了HttpClient提交会提示：Expression has not been generated. </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/网络爬虫/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1750,151 +1925,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/Exif/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/01/Exif/" class="post-title-link" itemprop="url">Exif</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-01 10:10:24 / 修改时间：10:49:58" itemprop="dateCreated datePublished" datetime="2019-04-01T10:10:24+08:00">2019-04-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>图片隐写题，编码比较。</p>
-<p>&emsp;&emsp;经查阅得知Exif：可交换图像文件格式（Exchangeable image file format），是专门为数码相机的照片设定的，可以记录数码照片的属性信息和拍摄数据。emmmm…了解了，照片中蕴含着信息，把这些信息搞出来研究研究。</p>
-<p>&emsp;&emsp;在查阅Exif的概念时，发现了一个在线的EXIF信息查看器（<a href="https://exif.tuchong.com/" target="_blank" rel="noopener">https://exif.tuchong.com/</a> ），将图片上传，得到一堆参数<img src="/images/exif-1.png" alt> 在给出的集中编码中，随便选择了比较熟悉的ASCII码尝试一下，将flag{}转换为ASCII码，然后查询匹配，最终定位到Credit这一栏。<img src="/images/exif-2.png" alt></p>
-<p>&emsp;&emsp;运气还不错，这一串数字，转化一下就是答案了。<img src="/images/exif-3.png" alt></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1942,7 +1972,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2265,7 +2295,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("网络爬虫简单上手");titles.push("Invisible_flag");titles.push("Shell");titles.push("Another 01Game");titles.push("Birthday");titles.push("PkCrack");titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");titles.push("Exif");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Calculator");titles.push("网络爬虫简单上手");titles.push("Invisible_flag");titles.push("Shell");titles.push("Another 01Game");titles.push("Birthday");titles.push("PkCrack");titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
