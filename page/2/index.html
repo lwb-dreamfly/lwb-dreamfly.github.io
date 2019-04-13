@@ -322,6 +322,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/Forensics1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/03/Forensics1/" class="post-title-link" itemprop="url">Forensics1</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-03 08:59:35 / 修改时间：16:05:03" itemprop="dateCreated datePublished" datetime="2019-04-03T08:59:35+08:00">2019-04-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;有点难搞，昨天搞出来，没来得及写博客，今天整理一下。</p>
+<h2 id="关于HTTP"><a href="#关于HTTP" class="headerlink" title="关于HTTP"></a>关于HTTP</h2><h3 id="1）HTTP简介"><a href="#1）HTTP简介" class="headerlink" title="1）HTTP简介"></a>1）HTTP简介</h3><p>&emsp;&emsp;HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。</p>
+<h3 id="2-HTTP工作原理"><a href="#2-HTTP工作原理" class="headerlink" title="2)HTTP工作原理"></a>2)HTTP工作原理</h3><p>HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。Web服务器根据接收到的请求后，向客户端发送响应信息。HTTP是基于请求响应模式的、无状态的、应用层协议。默认端口号80.</p>
+<h3 id="3）HTTP的特点"><a href="#3）HTTP的特点" class="headerlink" title="3）HTTP的特点"></a>3）HTTP的特点</h3><ul>
+<li>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
+<li>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</li>
+<li>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+</ul>
+<h3 id="4）HTTP消息结构"><a href="#4）HTTP消息结构" class="headerlink" title="4）HTTP消息结构"></a>4）HTTP消息结构</h3><ul>
+<li>客户端请求消息：请求行、请求头部、空行和请求数据<br><img src="/images/Forensics1/requesthead.png" alt></li>
+<li>服务端响应消息：状态行、消息报头、空行和响应正文</li>
+</ul>
+<h3 id="5-HTTP请求方法"><a href="#5-HTTP请求方法" class="headerlink" title="5)HTTP请求方法"></a>5)HTTP请求方法</h3><ul>
+<li><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。</p>
+</li>
+<li><p>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<p><img src="/images/Forensics1/requestmethod.png" alt></p>
+</li>
+</ul>
+<h3 id="6-HTTP状态码"><a href="#6-HTTP状态码" class="headerlink" title="6)HTTP状态码"></a>6)HTTP状态码</h3><p> <img src="/images/Forensics1/status.png" alt></p>
+<p>常见状态码这里不再搬运了，一找一大把、、、</p>
+<h2 id="解题实战"><a href="#解题实战" class="headerlink" title="解题实战"></a>解题实战</h2><p>1）下载安装wireshark打开题目提供的文件，在过滤器中输入过滤条件：http</p>
+<p>2）得到入下图：</p>
+<p><img src="/images/Forensics1/http.png" alt></p>
+<ul>
+<li>经三次握手建立连接后，服务器端192.168.245.136向客户端192.168.245.128发送了一个网页，查看源码<br><img src="/images/Forensics1/code-1.png" alt><br>导出为html页面：<br><img src="/images/Forensics1/html-1.png" alt></li>
+<li>2218行，客户端向服务器请求favicon.ico</li>
+<li>2248行，服务器做出响应，返回favicon.ico<br>该图片为：<br><img src="/images/Forensics1/favicon.jpg" alt></li>
+<li>2252行，客户端在输入框中输入密码”admin”提交<br><img src="/images/Forensics1/submit-1.png" alt></li>
+<li>2253行，服务器做出响应Wrong password.<br><img src="/images/Forensics1/response-1.png" alt></li>
+<li>2262行，客户端再次提交密码”test”</li>
+<li>2263行，服务器再次做出响应Wrong password.</li>
+<li>2272行，客户端提交密码”thisisatest”</li>
+<li>2273行，服务器响应了一个页面，页面源码：<br><img src="/images/Forensics1/html-2.png" alt><br>导出为html文件查看：<br><img src="/images/Forensics1/flag-1.png" alt></li>
+</ul>
+<p>3)答案应该就在s3cret图片中</p>
+<ul>
+<li>2275行，客服端请求s3cret.png</li>
+<li>2277行，服务器响应，返回该图片<br>导出为图片格式，得到flag。<br><img src="/images/Forensics1/flag.jpg" alt></li>
+</ul>
+<h2 id="总结与感悟"><a href="#总结与感悟" class="headerlink" title="总结与感悟"></a>总结与感悟</h2><p>&emsp;&emsp;通过这道题又回顾了一下HTTP协议，了解了一下wireshark软件的使用，收获还是蛮大的。只不过花了一天多的时间，搜集了若干资料，才算勉强搞定。还是蛮有成就感的，hhh、、、太容易自我满足了、、、前面还有不少难关，继续前进咯。</p>
+<p>&emsp;&emsp;Ps:没想到整理博客就整理了一上午、、、</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/docx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1394,7 +1577,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1419,7 +1602,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1717,7 +1902,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
