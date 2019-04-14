@@ -322,6 +322,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/PkCrack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/05/PkCrack/" class="post-title-link" itemprop="url">PkCrack</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-05 12:26:00 / 修改时间：12:26:31" itemprop="dateCreated datePublished" datetime="2019-04-05T12:26:00+08:00">2019-04-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;好像涉及密码学中的某些知识，又是新探索。</p>
+<h2 id="密码学中的攻击模式"><a href="#密码学中的攻击模式" class="headerlink" title="密码学中的攻击模式"></a>密码学中的攻击模式</h2><p>&emsp;&emsp;明文（Plaintext），在密码学中是指传送方想要接受方获得的可读信息。明文经过加密所产生的信息被称为密文，而密文经过解密而还原得来得信息被称为明文。</p>
+<p>&emsp;&emsp;密文（ciphertext或cyphertext），由明文经过加密算法所产生的。因为密文是一种除非使用恰当的算法进行解密，人类或计算机不可以直接阅读理解的明文的形态，所以可以被理解为加密的信息。解密与加密是相对的，即一种使使密文转化为明文的过程。</p>
+<p>&emsp;&emsp;由上得出理解，明文就是能看得见的可读的信息，密文就是加密后不想被不知道密码的人看见的信息。明文与密文可以通过加密解密来相互转换。</p>
+<h3 id="1）唯密文攻击"><a href="#1）唯密文攻击" class="headerlink" title="1）唯密文攻击"></a>1）唯密文攻击</h3><p>&emsp;&emsp;在只知道加密后的文字（密文）且不知道明文的情况下进行攻击。</p>
+<h3 id="2）已知明文攻击"><a href="#2）已知明文攻击" class="headerlink" title="2）已知明文攻击"></a>2）已知明文攻击</h3><p>&emsp;&emsp;指攻击者掌握了某段明文和对应的密文，通过若干明密文对获取加密方式，从而破解密文。</p>
+<h3 id="3）选择明文攻击"><a href="#3）选择明文攻击" class="headerlink" title="3）选择明文攻击"></a>3）选择明文攻击</h3><p>&emsp;&emsp;攻击者拥有加密机的访问权限，可构造任意明文所对应的密文。攻击者占有加密机，可以任意选择一定数量的明文，让加密机进行加密，得到响应的密文。攻击者只能使用加密机，并不知道加密算法。攻击者可以利用明文加密成密码的过程，来获得关于加密算法的一些信息，甚至可能直接获得解密用的钥匙。</p>
+<h3 id="4）选择密文攻击"><a href="#4）选择密文攻击" class="headerlink" title="4）选择密文攻击"></a>4）选择密文攻击</h3><p>&emsp;&emsp;攻击者掌握对解密机的访问权限，可构造任意密文所对应的明文。与选择明文攻击类似，同样可以获取明密文对，进而获取解密的信息。</p>
+<h2 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h2><ul>
+<li><p>网上下载了个Advanced Zip Password Recovery。</p>
+</li>
+<li><p>讲题目中提供的连个文件下载到本地。sqlmap_plain.zip和sqlmap.zip（加密，内有保存着flag的文件）</p>
+</li>
+<li><p>加密的zip文件处选择sqlmap.zip路径</p>
+</li>
+<li><p>攻击类型选择明文攻击。</p>
+</li>
+<li><p>设置明文文件路径，即sqlmap_plain.zip的路径。</p>
+</li>
+<li><p>保存解密后的文件，解压得到flag。</p>
+<p><img src="/images/PkCrack.png" alt></p>
+<p>PS：使用的软件为破解版，官方正版不注册无法查看秘钥，而且只能解密一个文件。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/Forensics2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1759,7 +1924,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2084,7 +2249,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("PkCrack");titles.push("Forensics2");titles.push("Forensics1");titles.push("docx");titles.push("Exif");titles.push("科学上网");titles.push("LSB");titles.push("《So you want to work in security?》读后感");titles.push("测试一哈");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
