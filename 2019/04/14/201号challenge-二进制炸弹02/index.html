@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码 123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec">
+  <meta name="description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec 3">
 <meta name="keywords" content="逆向工程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="201号challenge:二进制炸弹02">
 <meta property="og:url" content="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹02/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码 123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec 3">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/201/b3.png">
 <meta property="og:image" content="http://yoursite.com/images/201/b4.png">
-<meta property="og:updated_time" content="2019-04-14T09:42:59.255Z">
+<meta property="og:updated_time" content="2019-04-15T02:27:34.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="201号challenge:二进制炸弹02">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码 123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec 3">
 <meta name="twitter:image" content="http://yoursite.com/images/201/b3.png">
 
 
@@ -369,12 +369,24 @@
                 
               
 
-              <time title="创建时间：2019-04-14 09:14:20 / 修改时间：17:42:59" itemprop="dateCreated datePublished" datetime="2019-04-14T09:14:20+08:00">2019-04-14</time>
+              <time title="创建时间：2019-04-14 09:14:20" itemprop="dateCreated datePublished" datetime="2019-04-14T09:14:20+08:00">2019-04-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-15 10:27:34" itemprop="dateModified" datetime="2019-04-15T10:27:34+08:00">2019-04-15</time>
               
             
           </span>
@@ -415,10 +427,8 @@
 
       
         <p>&emsp;&emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。</p>
-<p><strong>phase_2汇编代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">08048bb4 &lt;phase_2&gt;:</span><br><span class="line"> 8048bb4:	53                   	push   %ebx</span><br><span class="line"> 8048bb5:	83 ec 38             	sub    $0x38,%esp</span><br><span class="line"> 8048bb8:	8d 44 24 18          	lea    0x18(%esp),%eax</span><br><span class="line"> 8048bbc:	89 44 24 04          	mov    %eax,0x4(%esp)</span><br><span class="line"> 8048bc0:	8b 44 24 40          	mov    0x40(%esp),%eax</span><br><span class="line"> 8048bc4:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048bc7:	e8 70 05 00 00       	call   804913c&lt;read_six_numbers&gt; //读入6个数</span><br><span class="line"> 8048bcc:	83 7c 24 18 00       	cmpl   $0x0,0x18(%esp)</span><br><span class="line"> 8048bd1:	79 22                	jns    8048bf5 &lt;phase_2+0x41&gt; //0x18(%esp)不是负数</span><br><span class="line"> 8048bd3:	e8 3d 05 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048bd8:	eb 1b                	jmp    8048bf5 &lt;phase_2+0x41&gt;</span><br><span class="line"> 8048bda:	89 d8                	mov    %ebx,%eax //这应该是进入循环的点</span><br><span class="line"> 8048bdc:	03 44 9c 14          	add    0x14(%esp,%ebx,4),%eax //求%esp+4*%ebx+0x14中的值与%eax中值的和 放入%eax</span><br><span class="line"> 8048be0:	39 44 9c 18          	cmp    %eax,0x18(%esp,%ebx,4) //%eax与%esp+4*%ebx+0x18比较 注意0x14(%esp,%ebx,4)与0x18(%esp,%ebx,4)相差4个字节 应该是相邻的整数</span><br><span class="line"> 8048be4:	74 05                	je     8048beb &lt;phase_2+0x37&gt; //要想不爆炸 必须相等才行</span><br><span class="line"> 8048be6:	e8 2a 05 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048beb:	83 c3 01             	add    $0x1,%ebx //%ebx值加一</span><br><span class="line"> 8048bee:	83 fb 06             	cmp    $0x6,%ebx //为6跳则出循环 猜想循环和6个数有关</span><br><span class="line"> 8048bf1:	75 e7                	jne    8048bda &lt;phase_2+0x26&gt;</span><br><span class="line"> 8048bf3:	eb 07                	jmp    8048bfc &lt;phase_2+0x48&gt;</span><br><span class="line"> 8048bf5:	bb 01 00 00 00       	mov    $0x1,%ebx //非负数时跳转到这 %ebx赋值1</span><br><span class="line"> 8048bfa:	eb de                	jmp    8048bda &lt;phase_2+0x26&gt;</span><br><span class="line"> 8048bfc:	83 c4 38             	add    $0x38,%esp</span><br><span class="line"> 8048bff:	5b                   	pop    %ebx</span><br><span class="line"> 8048c00:	c3                   	ret</span><br></pre></td></tr></table></figure>
-<p><strong>phase_2汇编指令</strong></p>
-<p>&emsp;&emsp;在phase_1整理过得这里不再列出，等做完再系统性的整理一下。</p>
+<h4 id="phase-2汇编代码"><a href="#phase-2汇编代码" class="headerlink" title="phase_2汇编代码"></a>phase_2汇编代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">08048bb4 &lt;phase_2&gt;:</span><br><span class="line"> 8048bb4:	53                   	push   %ebx</span><br><span class="line"> 8048bb5:	83 ec 38             	sub    $0x38,%esp</span><br><span class="line"> 8048bb8:	8d 44 24 18          	lea    0x18(%esp),%eax</span><br><span class="line"> 8048bbc:	89 44 24 04          	mov    %eax,0x4(%esp)</span><br><span class="line"> 8048bc0:	8b 44 24 40          	mov    0x40(%esp),%eax</span><br><span class="line"> 8048bc4:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048bc7:	e8 70 05 00 00       	call   804913c&lt;read_six_numbers&gt; //读入6个数</span><br><span class="line"> 8048bcc:	83 7c 24 18 00       	cmpl   $0x0,0x18(%esp)</span><br><span class="line"> 8048bd1:	79 22                	jns    8048bf5 &lt;phase_2+0x41&gt; //0x18(%esp)不是负数</span><br><span class="line"> 8048bd3:	e8 3d 05 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048bd8:	eb 1b                	jmp    8048bf5 &lt;phase_2+0x41&gt;</span><br><span class="line"> 8048bda:	89 d8                	mov    %ebx,%eax //这应该是进入循环的点</span><br><span class="line"> 8048bdc:	03 44 9c 14          	add    0x14(%esp,%ebx,4),%eax //求%esp+4*%ebx+0x14中的值与%eax中值的和 放入%eax</span><br><span class="line"> 8048be0:	39 44 9c 18          	cmp    %eax,0x18(%esp,%ebx,4) //%eax与%esp+4*%ebx+0x18比较 注意0x14(%esp,%ebx,4)与0x18(%esp,%ebx,4)相差4个字节 应该是相邻的整数</span><br><span class="line"> 8048be4:	74 05                	je     8048beb &lt;phase_2+0x37&gt; //要想不爆炸 必须相等才行</span><br><span class="line"> 8048be6:	e8 2a 05 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048beb:	83 c3 01             	add    $0x1,%ebx //%ebx值加一</span><br><span class="line"> 8048bee:	83 fb 06             	cmp    $0x6,%ebx //为6跳则出循环 猜想循环和6个数有关</span><br><span class="line"> 8048bf1:	75 e7                	jne    8048bda &lt;phase_2+0x26&gt;</span><br><span class="line"> 8048bf3:	eb 07                	jmp    8048bfc &lt;phase_2+0x48&gt;</span><br><span class="line"> 8048bf5:	bb 01 00 00 00       	mov    $0x1,%ebx //非负数时跳转到这 %ebx赋值1</span><br><span class="line"> 8048bfa:	eb de                	jmp    8048bda &lt;phase_2+0x26&gt;</span><br><span class="line"> 8048bfc:	83 c4 38             	add    $0x38,%esp</span><br><span class="line"> 8048bff:	5b                   	pop    %ebx</span><br><span class="line"> 8048c00:	c3                   	ret</span><br></pre></td></tr></table></figure>
+<h4 id="phase-2汇编指令"><a href="#phase-2汇编指令" class="headerlink" title="phase_2汇编指令"></a>phase_2汇编指令</h4><p>&emsp;&emsp;在phase_1整理过得这里不再列出，等做完再系统性的整理一下。</p>
 <table>
 <thead>
 <tr>
@@ -457,8 +467,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>phase_2拆除</strong></p>
-<p>&emsp;&emsp;任务书中提到，phase2是关于循环，重点看一看地址跳转的部分，特别是往后调走循环和跳出循环的指令，确定循环内执行的操作。经分析，若要不引爆炸弹，其循环方式与顺序应与下图一致（画的有点烂）：<br><img src="/images/201/b3.png" alt><br>所以需要使上述循环条件都成立，细细的分析一下循环部分的内容，因为我对汇编不熟悉，所以里面有些东西困扰了我好久，翻看了不少资料，趁现在来灵感了，抓紧记一下。以下分析按照不引爆炸弹的情况进行：</p>
+<h4 id="phase-2拆除"><a href="#phase-2拆除" class="headerlink" title="phase_2拆除"></a>phase_2拆除</h4><p>&emsp;&emsp;任务书中提到，phase2是关于循环，重点看一看地址跳转的部分，特别是往后调走循环和跳出循环的指令，确定循环内执行的操作。经分析，若要不引爆炸弹，其循环方式与顺序应与下图一致（画的有点烂）：<br><img src="/images/201/b3.png" alt><br>所以需要使上述循环条件都成立，细细的分析一下循环部分的内容，因为我对汇编不熟悉，所以里面有些东西困扰了我好久，翻看了不少资料，趁现在来灵感了，抓紧记一下。以下分析按照不引爆炸弹的情况进行：</p>
 <ul>
 <li>0x18(%esp)与0比较</li>
 <li>%ebx赋值为1</li>
@@ -565,8 +574,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -581,7 +599,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -633,6 +651,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-2汇编代码"><span class="nav-number">1.</span> <span class="nav-text">phase_2汇编代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-2汇编指令"><span class="nav-number">2.</span> <span class="nav-text">phase_2汇编指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-2拆除"><span class="nav-number">3.</span> <span class="nav-text">phase_2拆除</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
