@@ -96,29 +96,27 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。 关于爬虫&amp;emsp;&amp;emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。 &amp;emsp;&amp;emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和">
-<meta name="keywords" content="网络爬虫">
+  <meta name="description" content="&amp;emsp;&amp;emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &amp;gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下： 12345678">
+<meta name="keywords" content="CTF">
 <meta property="og:type" content="website">
-<meta property="og:title" content="网络爬虫简单上手">
-<meta property="og:url" content="http://yoursite.com/temp/网络爬虫.html">
+<meta property="og:title" content="Reverse_sign_in">
+<meta property="og:url" content="http://yoursite.com/temp/Reverse-sign-in.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。 关于爬虫&amp;emsp;&amp;emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。 &amp;emsp;&amp;emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &amp;gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下： 12345678">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/Web%20Crawler/jar.png">
-<meta property="og:image" content="http://yoursite.com/images/Web%20Crawler/iciba.png">
-<meta property="og:image" content="http://yoursite.com/images/Web%20Crawler/res.png">
-<meta property="og:updated_time" content="2019-04-09T11:11:15.981Z">
+<meta property="og:image" content="http://yoursite.com/images/rev1.png">
+<meta property="og:updated_time" content="2019-04-16T02:03:23.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络爬虫简单上手">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。 关于爬虫&amp;emsp;&amp;emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。 &amp;emsp;&amp;emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和">
-<meta name="twitter:image" content="http://yoursite.com/images/Web%20Crawler/jar.png">
+<meta name="twitter:title" content="Reverse_sign_in">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &amp;gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下： 12345678">
+<meta name="twitter:image" content="http://yoursite.com/images/rev1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/temp/网络爬虫.html">
+  <link rel="canonical" href="http://yoursite.com/temp/Reverse-sign-in.html">
 
 
 
@@ -128,7 +126,7 @@
   };
 </script>
 
-  <title>网络爬虫简单上手 | DreamFly</title>
+  <title>Reverse_sign_in | DreamFly</title>
   
 
 
@@ -337,7 +335,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">网络爬虫简单上手
+<h1 class="post-title" itemprop="name headline">Reverse_sign_in
 
 </h1>
 
@@ -357,30 +355,13 @@
       <div class="post-body">
         
         
-          <p>&emsp;&emsp;简单介绍一下网络爬虫，静态网页的爬虫，实现一些简单的小功能还是很实用的，也为后面解题做准备。</p>
-<h2 id="关于爬虫"><a href="#关于爬虫" class="headerlink" title="关于爬虫"></a>关于爬虫</h2><p>&emsp;&emsp;这里不讲各种百科上的官方定义，简单说一说自己的理解。</p>
-<p>&emsp;&emsp;真正的网络爬虫可以称为信息采集器，它可以按照一定的规则自动的在互联网上抓取信息，我目前所实现的爬虫，只是简单的抓取某一特定网页的自己想要的信息。网络爬虫可以分为全网漫爬型和垂直型，前者是指爬取数据范围广，在整个互联网内获取数据，像谷歌百度之类。后者是指针对某一网站或某一类型数据的抓取，比如专门爬取微博信息的爬虫等。</p>
-<p>&emsp;&emsp;爬虫就是取代浏览器，向网络上的服务器发送请求，并获取服务器中的资源来取得我们想要的信息。随便一搜爬虫的实现，Python的教程居多，但是java也可以简单上手。</p>
-<h2 id="上手准备"><a href="#上手准备" class="headerlink" title="上手准备"></a>上手准备</h2><p><strong>工具：</strong> Eclipse、httpclient和jsoup的相应jar包</p>
-<p><img src="/images/Web Crawler/jar.png" alt></p>
-<p><strong>HttpClient简介：</strong> HttpClient是apache组织下面的一个用于处理HTTP请求和响应的开源工具。它不是一个浏览器，而是一个类库。它在JDK的基本类库基础上做了更好的封装。</p>
-<p><strong>HttpClient抓取网页流程：</strong> </p>
-<ol>
-<li>创建HttpClient对象。</li>
-<li>创建请求方法的实例，并制定请求URL。如果需要发送GET请求，创建HTTPGet对象；如果需要发送POST请求，创建HttpPost对象。</li>
-<li>如果需要发送请求参数，可调用HttpGet、HttpPost共同的setParams（HttpParams params）方法来添加请求参数；对于HttpPost对象而言，也可调用setEntity（HttpEntity entity）方法来设置请求参数。</li>
-</ol>
-<p><strong>Jsoup简介：</strong> jsoup是一款javaHTML解析器，可以直接解析URL地址，HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据。</p>
-<p><strong>Jsoup处理网页流程：</strong> </p>
-<ol>
-<li>从一个URL，文件或字符串中解析HTML。</li>
-<li>使用DOM或CSS选择器来查找、取出数据。</li>
-<li>可操作HTML元素、属性、文本。</li>
-</ol>
-<p>&emsp;&emsp;通常在写爬虫程序时，httpclient集合jsoup共同使用即可实现不错的爬虫系统。<strong>httpclient负责模拟浏览器发送请求，jsoup负责解析httpclient请求返回的HTML页面，解析获取需要的数据。</strong></p>
-<h2 id="简单上手"><a href="#简单上手" class="headerlink" title="简单上手"></a>简单上手</h2><p>&emsp;&emsp;写一个简单的英汉互译系统练手，一般在翻译网站上查询单词的意思时，是在网址后拼接待查询单词向服务器提交，例如爱词霸，查询hello的汉语意思时，地址栏显示的网址为：<a href="http://www.iciba.com/hello" target="_blank" rel="noopener">http://www.iciba.com/hello</a> 利用这可特性，结合上面的基础知识可以实现简单的单词释义查询。<br><img src="/images/Web Crawler/iciba.png" alt><br>下面将实现代码列出：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		HttpClient hClient=<span class="keyword">new</span> DefaultHttpClient();</span><br><span class="line">		<span class="comment">//设置响应时间，设置传输源码时间，设置代理服务器（防止被识别ip加入黑名单而无法爬取）</span></span><br><span class="line">		<span class="comment">//百度 代理服务器ip 即可得到代理服务器  本例可不使用</span></span><br><span class="line">		<span class="comment">/*hClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 10000)</span></span><br><span class="line"><span class="comment">		.setParameter(CoreConnectionPNames.SO_TIMEOUT, 10000)</span></span><br><span class="line"><span class="comment">		.setParameter(ConnRouteParams.DEFAULT_PROXY, new HttpHost("116.209.58.123",9999 ));</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		<span class="comment">//爬虫URL大部分是get请求，创建get请求对象</span></span><br><span class="line">		HttpGet hget=<span class="keyword">new</span> HttpGet(<span class="string">"http://www.iciba.com/hello"</span>);</span><br><span class="line">		<span class="comment">//向传智播客网站发送请求 获取网页源码</span></span><br><span class="line">		HttpResponse response=hClient.execute(hget);</span><br><span class="line">		<span class="comment">//EntityUtils工具类把网页实体转换成字符串</span></span><br><span class="line">		String content=EntityUtils.toString(response.getEntity(),<span class="string">"utf-8"</span>);</span><br><span class="line">		<span class="comment">//jsoup解析网页</span></span><br><span class="line">		Document doc = Jsoup.parse(content);</span><br><span class="line">		<span class="comment">//使用元素选择器选择网页内容li.lione a</span></span><br><span class="line">		Elements select = doc.select(<span class="string">"li.clearfix p"</span>);</span><br><span class="line">		System.out.println(select.text());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;简单解析处理后的效果：<br><img src="/images/Web Crawler/res.png" alt></p>
+          <p>&emsp;&emsp;给了一个Linux下可执行的rev1文件，输入命令<code>objdump -d rev1 &gt; rev1.txt</code> 将它的汇编代码放到rev1.txt文件中，然后<code>gdb rev</code> 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">__int64 __<span class="function">fastcall <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __int64 result; <span class="comment">// rax</span></span><br><span class="line">  <span class="keyword">char</span> s; <span class="comment">// [rsp+0h] [rbp-30h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v5; <span class="comment">// [rsp+28h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v5 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Please input your flag:"</span>, a2, a3);</span><br><span class="line">  __isoc99_scanf(<span class="string">"%32s"</span>, &amp;s);</span><br><span class="line">  <span class="keyword">if</span> ( <span class="built_in">strlen</span>(&amp;s) == <span class="number">32</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( (<span class="keyword">unsigned</span> <span class="keyword">int</span>)sub_400686((__int64)&amp;s) )</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"Right!"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"Wrong!"</span>);</span><br><span class="line">    result = <span class="number">0L</span>L;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Wrong!"</span>);</span><br><span class="line">    result = <span class="number">0L</span>L;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;只有当字符串s的长度为32且sub_400686()函数的返回值非0时，才会输出”Right”，答案应该在这个函数中寻找，跳转到这个函数的伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">signed</span> __int64 __<span class="function">fastcall <span class="title">sub_400686</span><span class="params">(__int64 a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">signed</span> <span class="keyword">int</span> i; <span class="comment">// [rsp+Ch] [rbp-Ch]</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt;= <span class="number">31</span>; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( (<span class="keyword">char</span>)(*(_BYTE *)(i + a1) ^ byte_400818[i]) != i )</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0L</span>L;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1L</span>L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中byte_400818是一个数组：<img src="/images/rev1.png" alt>该函数的大概意思是，将字符串中下标i的字符与数组中下标为i的数进行异或运算，要保证结果与下标i相等。所以可以根据这个函数写个代码来反向求出字符串。另外，2dup(60h)表示两个十六进制数0x60。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">32</span>];</span><br><span class="line">    <span class="keyword">int</span> b[]=&#123;<span class="number">0x66</span>,<span class="number">0x6d</span>,<span class="number">0x63</span>,<span class="number">0x64</span>,<span class="number">0x7f</span>,<span class="number">0x3c</span>,<span class="number">0x36</span>,<span class="number">0x72</span>,<span class="number">0x57</span>,<span class="number">0x42</span>,</span><br><span class="line">    <span class="number">0x64</span>,<span class="number">0x3b</span>,<span class="number">0x7b</span>,<span class="number">0x52</span>,<span class="number">0x7c</span>,<span class="number">0x3c</span>,<span class="number">0x66</span>,<span class="number">0x54</span>,<span class="number">0x60</span>,<span class="number">0x60</span>,</span><br><span class="line">    <span class="number">0x27</span>,<span class="number">0x4a</span>,<span class="number">0x49</span>,<span class="number">0x7f</span>,<span class="number">0x71</span>,<span class="number">0x58</span>,<span class="number">0x52</span>,<span class="number">0x72</span>,<span class="number">0x7d</span>,<span class="number">0x75</span>,</span><br><span class="line">    <span class="number">0x2a</span>,<span class="number">0x62</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">31</span>;i++)</span><br><span class="line">        a[i]=(<span class="keyword">char</span>)b[i]^i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">31</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;运行一下，即可打印输出flag。</p>
 
         
       </div>
@@ -424,17 +405,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -449,7 +421,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -474,7 +446,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -499,23 +473,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于爬虫"><span class="nav-number">1.</span> <span class="nav-text">关于爬虫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上手准备"><span class="nav-number">2.</span> <span class="nav-text">上手准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单上手"><span class="nav-number">3.</span> <span class="nav-text">简单上手</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -779,13 +736,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = '网络爬虫简单上手'.length > 0
+      var isPost = 'Reverse_sign_in'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '网络爬虫简单上手'
+        var title = 'Reverse_sign_in'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

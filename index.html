@@ -322,6 +322,237 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/201号challenge-二进制炸弹05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/16/201号challenge-二进制炸弹05/" class="post-title-link" itemprop="url">201号challenge:二进制炸弹05</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-16 10:04:53 / 修改时间：18:40:37" itemprop="dateCreated datePublished" datetime="2019-04-16T10:04:53+08:00">2019-04-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;逐渐进入白热化、、、</p>
+<h4 id="phase-5汇编代码与解析"><a href="#phase-5汇编代码与解析" class="headerlink" title="phase_5汇编代码与解析"></a>phase_5汇编代码与解析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">08048d5b &lt;phase_5&gt;:</span><br><span class="line"> 8048d5b:	83 ec 2c             	sub    $0x2c,%esp</span><br><span class="line"> 8048d5e:	8d 44 24 1c          	lea    0x1c(%esp),%eax</span><br><span class="line"> 8048d62:	89 44 24 0c          	mov    %eax,0xc(%esp)</span><br><span class="line"> 8048d66:	8d 44 24 18          	lea    0x18(%esp),%eax</span><br><span class="line"> 8048d6a:	89 44 24 08          	mov    %eax,0x8(%esp)</span><br><span class="line"> 8048d6e:	c7 44 24 04 0f a3 04 	movl   $0x804a30f,0x4(%esp) //输入格式为两个整数</span><br><span class="line"> 8048d75:	08 </span><br><span class="line"> 8048d76:	8b 44 24 30          	mov    0x30(%esp),%eax</span><br><span class="line"> 8048d7a:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048d7d:	e8 de fa ff ff       	call   8048860 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line"> 8048d82:	83 f8 01             	cmp    $0x1,%eax //sscanf()返回值和1比较</span><br><span class="line"> 8048d85:	7f 05                	jg     8048d8c &lt;phase_5+0x31&gt; //%eax&gt;1 否则爆炸  输入大于一个数  应该是输两个</span><br><span class="line"> 8048d87:	e8 89 03 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048d8c:	8b 44 24 18          	mov    0x18(%esp),%eax //结合下面分析此处的0x18(%esp)应该为所求的第一个整数</span><br><span class="line"> 8048d90:	83 e0 0f             	and    $0xf,%eax //按位与 结合下面的判断 此时%eax！=15（二进制1111） 15以下的非负数和0xf想与还是本身</span><br><span class="line"> 8048d93:	89 44 24 18          	mov    %eax,0x18(%esp)</span><br><span class="line"> 8048d97:	83 f8 0f             	cmp    $0xf,%eax</span><br><span class="line"> 8048d9a:	74 2a                	je     8048dc6 &lt;phase_5+0x6b&gt; //%eax!=15 否则爆炸</span><br><span class="line"> 8048d9c:	b9 00 00 00 00       	mov    $0x0,%ecx //ecx=0</span><br><span class="line"> 8048da1:	ba 00 00 00 00       	mov    $0x0,%edx //edx=0</span><br><span class="line"> 8048da6:	83 c2 01             	add    $0x1,%edx //edx=1  &lt;--跳回此地 执行edx++</span><br><span class="line"> 8048da9:	8b 04 85 c0 a1 04 08 	mov    0x804a1c0(,%eax,4),%eax //从数组中取值 eax做数组下标取出的值赋给eax</span><br><span class="line"> 8048db0:	01 c1                	add    %eax,%ecx //ecx=eax+ecx</span><br><span class="line"> 8048db2:	83 f8 0f             	cmp    $0xf,%eax //比较eax和15</span><br><span class="line"> 8048db5:	75 ef                	jne    8048da6 &lt;phase_5+0x4b&gt; //eax不等于15就又跳回去了 最终eax要取到15--&gt;</span><br><span class="line"> 8048db7:	89 44 24 18          	mov    %eax,0x18(%esp)</span><br><span class="line"> 8048dbb:	83 fa 0f             	cmp    $0xf,%edx //edx和15比 edx起始值为0 每次循环加1 所有循环了15次</span><br><span class="line"> 8048dbe:	75 06                	jne    8048dc6 &lt;phase_5+0x6b&gt; //edx不等于15就爆炸 所以要edx=15</span><br><span class="line"> 8048dc0:	3b 4c 24 1c          	cmp    0x1c(%esp),%ecx //0x1c(%esp)应该是第二个整数 它等于ecx</span><br><span class="line"> 8048dc4:	74 05                	je     8048dcb &lt;phase_5+0x70&gt; //0x1c(%esp)==%ecx</span><br><span class="line"> 8048dc6:	e8 4a 03 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048dcb:	83 c4 2c             	add    $0x2c,%esp</span><br><span class="line"> 8048dce:	c3                   	ret</span><br></pre></td></tr></table></figure>
+<h4 id="phase-5拆除"><a href="#phase-5拆除" class="headerlink" title="phase_5拆除"></a>phase_5拆除</h4><p>&emsp;&emsp;简单说一下上面的代码的思路，最关键的部分在循环阶段，输入的第一个整数eax作为数组下标，每次循环取出下标对应的数组元素值赋给该整数eax，这个eax初始值不等于15但是经过15次循环后最终取值取到15，第二个整数的值等于数组从下标1-15对应的元素之和。这个题很关键的一点在确定数组的元素值，然后根据最后的数值逆推15次循环之前的初试数值。一开始尝试一个一个地址的查看数组元素：<img src="/images/201/b9.png" alt>太慢太耗费时间，然后又发现了新的查看数组元素的方法<code>p *数组首地址(可以是数组名)@数组长度</code> 尝试了下：<img src="/images/201/b10.png" alt>通过上图数据数组下标可以从0取到15，其实通过汇编代码也可以确定，因为最终循环结束是起标志作用的edx等15时。根据数组元素与代码逻辑，逐一逆推：</p>
+<table>
+<thead>
+<tr>
+<th>edx</th>
+<th>eax</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>7</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+<td>11</td>
+</tr>
+<tr>
+<td>5</td>
+<td>11</td>
+<td>13</td>
+</tr>
+<tr>
+<td>6</td>
+<td>13</td>
+<td>9</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9</td>
+<td>4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>11</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>14</td>
+</tr>
+<tr>
+<td>14</td>
+<td>14</td>
+<td>6</td>
+</tr>
+<tr>
+<td>15</td>
+<td>6</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>经过分析可以发现，第一个整数的值是5，第二个整数的值是第三列所有数的和115。<img src="/images/201/b11.png" alt> </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/15/201号challenge-二进制炸弹04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1864,160 +2095,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/Another 01Game/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/07/Another 01Game/" class="post-title-link" itemprop="url">Another 01Game</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-07 10:55:30 / 修改时间：17:32:49" itemprop="dateCreated datePublished" datetime="2019-04-07T10:55:30+08:00">2019-04-07</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&emsp;&emsp;这个题很有意思、、、但是如果题干给的提示不这么详细，那就不好玩了、、、</p>
-<h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><p>&emsp;&emsp;二维码（Quick Response Code，QR Code），以下引用自百度百科。</p>
-<blockquote>
-<p>&emsp;&emsp;二维码又称二维条码，常见的二维码为QR Code，QR全称Quick Response，是一个近几年来移动设备上超流行的一种编码方式，它比传统的Bar Code条形码能存更多的信息，也能表示更多的数据类型。<br>&emsp;&emsp;二维条码/二维码（2-dimensional bar code）是用某种特定的几何图形按一定规律在平面（二维方向上）分布的黑白相间的图形记录数据符号信息的；<strong>在代码编制上巧妙地利用构成计算机内部逻辑基础的“0”、“1”比特流的概念，使用若干个与二进制相对应的几何形体来表示文字数值信息</strong>，通过图象输入设备或光电扫描设备自动识读以实现信息自动处理：它具有条码技术的一些共性：每种码制有其特定的字符集；每个字符占有一定的宽度；具有一定的校验功能等。</p>
-</blockquote>
-<p>&emsp;&emsp;二维码，是和二进制数0,1有密切关联的。</p>
-<h2 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h2><p>&emsp;&emsp;题干中明确给出了，那一串数字有1369个0和1，是37的平方，可以构成边长为37个数字的正方形二维码（虽然题干中直接给出了结论，但是这种分析的思想一定要具备，好好学习）。然后通过扫描二维码又可以得到一串二进制01字符串，进行ASCII解码得出结果。</p>
-<h3 id="1）绘制二维码"><a href="#1）绘制二维码" class="headerlink" title="1）绘制二维码"></a>1）绘制二维码</h3><p>&emsp;&emsp;最初尝试利用C++在codeblock中打印输出二维码（因为之前写过黑白棋游戏，打印棋盘最开始的想法和这个类似，所以优先想到用代码打印图形的方式来绘制二维码），但是尝试了好几次，又是调背景色又是调字体大小又是换方块大小又是01互换，都没能扫出信息，应该是每行之间的行间隔太大，识别不成二维码。然后又打开eclipse进行尝试，成功得到可扫描的二维码（java是最好用的语言！！）。下面将处理代码贴出：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Qrcode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	    String s=<span class="string">"00...0110"</span>;<span class="comment">//此处为题中给出的二进制数字串，太长了，省略写</span></span><br><span class="line">	    <span class="keyword">int</span> f=<span class="number">0</span>;</span><br><span class="line">	    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)</span><br><span class="line">	    &#123;</span><br><span class="line">	        f++;<span class="comment">//■ ■ █ ▇ ▉ ▉ █ 这是用来输出二维码的黑色的方块，从中试了试，挑了个能扫出来信息的</span></span><br><span class="line">	        <span class="keyword">if</span>(s.charAt(i)==<span class="string">'0'</span>) System.out.print(<span class="string">"██"</span>);<span class="comment">//█</span></span><br><span class="line">	        <span class="keyword">else</span> System.out.print(<span class="string">"  "</span>);</span><br><span class="line">	        <span class="keyword">if</span>(f%<span class="number">37</span>==<span class="number">0</span>) System.out.println();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;最开始得到二维码后，感觉能成，但是字符太大了，一个页面装不下，没法直接扫，将字体调小后成功得到二维码。<br><img src="/images/Another 01Game/qrcode.png" alt title="QR Code"></p>
-<h3 id="2-处理01字符串"><a href="#2-处理01字符串" class="headerlink" title="2)处理01字符串"></a>2)处理01字符串</h3><p>&emsp;&emsp;掏出手机，扫描二维码，得到一串01字符串，该字符串长度为189，可以被7整除，按照ASCII的编码方式进行转换。直接写个函数，打印输出，控制台得到flag，搞定。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">flag</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String s=<span class="string">"1100...101"</span>  ;<span class="comment">//这是扫描二维码得到的一串二进制数字串，也挺长的</span></span><br><span class="line">		System.out.println(s.length());<span class="comment">//189  可以被7整除 ASCII</span></span><br><span class="line">		<span class="keyword">int</span> a[]= &#123;<span class="number">64</span>,<span class="number">32</span>,<span class="number">16</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (len &lt; s.length()) &#123;</span><br><span class="line">			<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++) &#123;<span class="comment">//7位一组</span></span><br><span class="line">				<span class="keyword">if</span> (s.charAt(len++) == <span class="string">'1'</span>) &#123;</span><br><span class="line">					sum += a[i];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.print((<span class="keyword">char</span>) sum);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p>&emsp;&emsp;一道题要涉及到很多方方面面的知识，还需要多积累多练习啊~从最开始看到题时的一无所知，无从下手，到现在写下这篇博客，攻克下一个难关还是有些小喜悦的，但是我的进度还是有点慢，加油加油。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2065,7 +2142,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2390,7 +2467,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("201号challenge:二进制炸弹04");titles.push("201号challenge:二进制炸弹03");titles.push("201号challenge:二进制炸弹02");titles.push("201号challenge:二进制炸弹01");titles.push("RapidTyping");titles.push("Calculator");titles.push("网络爬虫简单上手");titles.push("Invisible_flag");titles.push("Shell");titles.push("Another 01Game");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("201号challenge:二进制炸弹05");titles.push("201号challenge:二进制炸弹04");titles.push("201号challenge:二进制炸弹03");titles.push("201号challenge:二进制炸弹02");titles.push("201号challenge:二进制炸弹01");titles.push("RapidTyping");titles.push("Calculator");titles.push("网络爬虫简单上手");titles.push("Invisible_flag");titles.push("Shell");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
