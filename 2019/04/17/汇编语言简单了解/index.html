@@ -96,25 +96,27 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。 知识点铺垫 isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。 $_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。 md5(string)将一个字符串进行">
-<meta name="keywords" content="CTF">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Basic_PHP">
-<meta property="og:url" content="http://yoursite.com/temp/Basic-PHP.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;在做题中也搜集了解了些关于汇编的知识，了解了部分常用指令的功能，现在整理汇总一下目前所接触到的寄存器的相关知识，抽空还要系统性学习。另外，不同平台有不同的汇编语言对应，因为汇编和操作系统平台相关，以下为32位的80x86汇编语言知识点简要总结。 数据寄存器EAX、EBX、ECX和EDX&amp;emsp;&amp;emsp;IA-32架构中有4个32位数据寄存器，用于保存临时数据，分别是E">
+<meta name="keywords" content="汇编语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言简单入门">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/汇编语言简单了解/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。 知识点铺垫 isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。 $_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。 md5(string)将一个字符串进行">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在做题中也搜集了解了些关于汇编的知识，了解了部分常用指令的功能，现在整理汇总一下目前所接触到的寄存器的相关知识，抽空还要系统性学习。另外，不同平台有不同的汇编语言对应，因为汇编和操作系统平台相关，以下为32位的80x86汇编语言知识点简要总结。 数据寄存器EAX、EBX、ECX和EDX&amp;emsp;&amp;emsp;IA-32架构中有4个32位数据寄存器，用于保存临时数据，分别是E">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-12T13:51:36.094Z">
+<meta property="og:image" content="http://yoursite.com/images/HB/寄存器分位.png">
+<meta property="og:updated_time" content="2019-04-17T07:39:06.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic_PHP">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。 知识点铺垫 isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。 $_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。 md5(string)将一个字符串进行">
+<meta name="twitter:title" content="汇编语言简单入门">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在做题中也搜集了解了些关于汇编的知识，了解了部分常用指令的功能，现在整理汇总一下目前所接触到的寄存器的相关知识，抽空还要系统性学习。另外，不同平台有不同的汇编语言对应，因为汇编和操作系统平台相关，以下为32位的80x86汇编语言知识点简要总结。 数据寄存器EAX、EBX、ECX和EDX&amp;emsp;&amp;emsp;IA-32架构中有4个32位数据寄存器，用于保存临时数据，分别是E">
+<meta name="twitter:image" content="http://yoursite.com/images/HB/寄存器分位.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/temp/Basic-PHP.html">
+  <link rel="canonical" href="http://yoursite.com/2019/04/17/汇编语言简单了解/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>Basic_PHP | DreamFly</title>
+  <title>汇编语言简单入门 | DreamFly</title>
   
 
 
@@ -303,117 +305,233 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/汇编语言简单了解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Basic_PHP
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>&emsp;&emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。</p>
-<h3 id="知识点铺垫"><a href="#知识点铺垫" class="headerlink" title="知识点铺垫"></a>知识点铺垫</h3><ol>
-<li>isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。</li>
-<li>$_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。</li>
-<li>md5(string)将一个字符串进行加密计算。</li>
-<li>sha1也是一种加密算法：安全哈希算法。</li>
+          <h1 class="post-title" itemprop="name headline">汇编语言简单入门
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-17 10:06:27 / 修改时间：15:39:06" itemprop="dateCreated datePublished" datetime="2019-04-17T10:06:27+08:00">2019-04-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;在做题中也搜集了解了些关于汇编的知识，了解了部分常用指令的功能，现在整理汇总一下目前所接触到的寄存器的相关知识，抽空还要系统性学习。另外，不同平台有不同的汇编语言对应，因为汇编和操作系统平台相关，以下为32位的80x86汇编语言知识点简要总结。</p>
+<h3 id="数据寄存器EAX、EBX、ECX和EDX"><a href="#数据寄存器EAX、EBX、ECX和EDX" class="headerlink" title="数据寄存器EAX、EBX、ECX和EDX"></a>数据寄存器EAX、EBX、ECX和EDX</h3><p>&emsp;&emsp;IA-32架构中有4个32位数据寄存器，用于保存临时数据，分别是EAX、EBX、ECX和EDX。</p>
+<p>&emsp;&emsp;这4个32位寄存器名字前都有一字母”E”，含义是”Expan”扩展，这是由于在16位的时代，这4个寄存器的名字是AX、BX、CX和DX，到了32位后就在它们名字前加”E”来区别是32位还是16位。</p>
+<p>&emsp;&emsp;这4个32位寄存器可以当作16位使用，也可以当作8为使用。当作8位使用时，将AX拆开为AH和AL，”H”代表”High”，意思是高位，”L”代表”Low”，意思是低位。同理BX、CX和DX也可拆开为BH、BL、CH、CL、DH、DL来使用。<img src="/images/HB/寄存器分位.png" alt></p>
+<ol>
+<li>EAX寄存器：EAX称为累加器，常用于算数运算、布尔操作、逻辑操作、返回函数结果等。</li>
+<li>EBX寄存器：EBX称为基址寄存器，常用于存档内存地址。</li>
+<li>ECX寄存器：ECX称为计数寄存器，常用于存放循环语句的循环次数，字符串操作中也常用。</li>
+<li>EDX寄存器：EDX称为数据寄存器，常和EAX一起使用。</li>
 </ol>
-<h3 id="梳理代码"><a href="#梳理代码" class="headerlink" title="梳理代码"></a>梳理代码</h3><p>&emsp;&emsp;虽然没有学过php，但是有了上面的铺垫，再加上本身的编程基础，而且本题中的代码逻辑简单，理解起来还是很容易的。下面按照顺序简单梳理一下程序的内容。</p>
+<p>&emsp;&emsp;上述的4个通用寄存的专门用途不是一成不变的，编译器在编译程序时会根据很多因素做出相应改变。</p>
+<h3 id="变址寄存器ESI和EDI"><a href="#变址寄存器ESI和EDI" class="headerlink" title="变址寄存器ESI和EDI"></a>变址寄存器ESI和EDI</h3><p>&emsp;&emsp;变址的含义是内存地址是会变动的，也就是说变址寄存器中存放变动的内存地址。</p>
+<ol>
+<li>ESI寄存器：称为源变址寄存器，通常存放要处理的数据的内存地址。</li>
+<li>EDI寄存器：称为目的变址寄存器，通常存放处理后的数据的内存地址。</li>
+</ol>
+<p>&emsp;&emsp;ESI和EDI常用来配合使用完成数据的赋值操作。</p>
+<h3 id="指针寄存器EBP和ESP"><a href="#指针寄存器EBP和ESP" class="headerlink" title="指针寄存器EBP和ESP"></a>指针寄存器EBP和ESP</h3><p>&emsp;&emsp;80386的指针寄存器有基址寄存器EBP，堆栈指针寄存器ESP和指令指针寄存器EIP。</p>
+<ol>
+<li>EBP寄存器：称为基址寄存器，可作为通用寄存器用于存放操作数，常用来代替堆栈指针访问堆栈中的数据。</li>
+<li>ESP寄存器：称为堆栈指针寄存器，不可作为通用寄存器使用，ESP存放当前堆栈栈顶的地址，一般情况下，ESP和EBP联合使用来访问函数中的参数的局部变量。</li>
+<li>EIP寄存器：称为指令指针寄存器，总是指向下一跳要执行的指令的地址，一般情况下无需修改EIP。</li>
+</ol>
+<p>&emsp;&emsp;ESP和EBP常配合使用完成堆栈的访问。</p>
+<h3 id="标志寄存器EFLAGS"><a href="#标志寄存器EFLAGS" class="headerlink" title="标志寄存器EFLAGS"></a>标志寄存器EFLAGS</h3><p>&emsp;&emsp;标志寄存器EFLAGS一共有32位，在这32位中大部分是保留给编写操作系统的人用的，一般情况下只需知道32位的低16位中的8位即可。</p>
 <ul>
-<li>首先判断name、password和test这三个变量是否设置，若已经设置，继续向下执行；否则直接退出，结束程序。</li>
-<li>取出test并进行md5加密。</li>
-<li>若test经加密后与0相等，通过阶段1，继续向下；否则结束。</li>
-<li>如果name与password的值相等，结束。若不相等，,则继续向下执行。</li>
-<li>如果name与password经sha1加密后相等，给出flag，否则退出当前脚本。</li>
+<li>OF（Overflow Flag）：溢出标志，溢出时为1，否则置0.</li>
+<li>DF（Direction Flag）：方向标志，在串处理指令中控制信息的方向。</li>
+<li>IF（Interrupt Flag）：中断标志。</li>
+<li>AF（Auxiliary carry Flag）：辅助进位标志，有进位时置1，否则置0。</li>
+<li>ZF（Zero Flag）：零标志，运算结构为0时ZF位置1，否则置0。</li>
+<li>SF（Sign Flag）：符号标志，结果为负数置1，否则置0。</li>
+<li>CF（Carry Flag）：进位标志，进位时置1，都在置0。</li>
+<li>PF（Parity Flag）：奇偶标志，结果操作数中1的个数为偶数时置1，否则置0。</li>
 </ul>
-<p>&emsp;&emsp;总结下来就是，需要设置好name、password和test这三个变量，test应满足经md5加密后与0相等，name与password应满足本身值不相同但经过sha1加密后相同。</p>
-<h3 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h3><p>&emsp;&emsp;经过上面的分析，解题的方法已经很明确了，就是寻找一个经md5加密后与0相等的字符串，还要寻找两个本身值不相同，但是经过sha1加密后相等的字符串。</p>
-<p>&emsp;&emsp;先从test开始入手，经查阅知，<strong>只要一个字符串md5加密后32位密文的开头为0e，即可使md5(string)==’0’成立</strong>，这样字符串有不少，简单列举几个，经测试都有效：</p>
-<table>
-<thead>
-<tr>
-<th>字符串</th>
-<th>md5加密后（32位）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>240610708</td>
-<td>0e462097431906509019562988736854</td>
-</tr>
-<tr>
-<td>aabg7XSs</td>
-<td>0e087386482136013740957780965295</td>
-</tr>
-<tr>
-<td>aabC9RqS</td>
-<td>0e041022518165728065344349536299</td>
-</tr>
-<tr>
-<td>s1836677006a</td>
-<td>0e481036490867661113260034900752</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;<strong>sha1()函数要求传入的参数是字符串类型，如果传入两个数组类型，结果就都是FALSE,就相等了</strong>，这样name与password的解决方法也有了。</p>
-<p>&emsp;&emsp;通过get方式提交数据，直接在URL中追加变量和属性即可，于是构造如下地址：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//123.207.149.64:23331/feature/?name[]=1&amp;password[]=2&amp;test=s1836677006a</span></span><br></pre></td></tr></table></figure></p>
-<p>正常访问即可获得flag。</p>
+<p>&emsp;&emsp;EFLAGS是实现条件判断和逻辑判断的一种机制，在汇编语言中一般不直接访问EFLAGS寄存器，而是通过指令的操作隐含访问EFLAGS寄存器。</p>
+<h3 id="寻址方式及作用"><a href="#寻址方式及作用" class="headerlink" title="寻址方式及作用"></a>寻址方式及作用</h3><ol>
+<li><p>立即寻址，通常用于赋值。</p>
+<p>示例：<code>mov eax，56h</code> </p>
+</li>
+<li><p>直接寻址，通常用于处理变量。</p>
+<p>示例：<code>mov eax,[78h]</code> .</p>
+</li>
+<li><p>寄存器寻址，操作数直接包含在寄存器中。</p>
+<p>示例：<code>mov eax,ebx</code> </p>
+</li>
+<li><p>寄存器间接寻址，操作数的有效地址在寄存器中，而操作数在存储器中。</p>
+<p>示例：<code>mov eax,[edi]</code> </p>
+</li>
+<li><p>寄存器相对寻址，常用于访问数组。</p>
+<p>示例：<code>mov eax,[edi+32h]</code> </p>
+</li>
+<li><p>基址加变址寻址，常用于访问数组。</p>
+<p>示例：<code>mov eax,[ebp+esi]</code> </p>
+</li>
+<li><p>相对基址加变址寻址</p>
+<p>示例：<code>mov eax,[ebx+edi-10h]</code></p>
+</li>
+</ol>
 
-        
-      </div>
-      
-      
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/汇编语言/" rel="tag"># 汇编语言</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/16/201号challenge-二进制炸弹05/" rel="next" title="201号challenge:二进制炸弹05">
+                <i class="fa fa-chevron-left"></i> 201号challenge:二进制炸弹05
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -533,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点铺垫"><span class="nav-number">1.</span> <span class="nav-text">知识点铺垫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梳理代码"><span class="nav-number">2.</span> <span class="nav-text">梳理代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题过程"><span class="nav-number">3.</span> <span class="nav-text">解题过程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据寄存器EAX、EBX、ECX和EDX"><span class="nav-number">1.</span> <span class="nav-text">数据寄存器EAX、EBX、ECX和EDX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变址寄存器ESI和EDI"><span class="nav-number">2.</span> <span class="nav-text">变址寄存器ESI和EDI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针寄存器EBP和ESP"><span class="nav-number">3.</span> <span class="nav-text">指针寄存器EBP和ESP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标志寄存器EFLAGS"><span class="nav-number">4.</span> <span class="nav-text">标志寄存器EFLAGS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寻址方式及作用"><span class="nav-number">5.</span> <span class="nav-text">寻址方式及作用</span></a></li></ol></div>
             
 
           </div>
@@ -802,13 +920,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'Basic_PHP'.length > 0
+      var isPost = '汇编语言简单入门'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'Basic_PHP'
+        var title = '汇编语言简单入门'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
