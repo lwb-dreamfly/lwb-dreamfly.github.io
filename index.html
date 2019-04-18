@@ -322,6 +322,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/201号challeng：二进制炸弹06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/18/201号challeng：二进制炸弹06/" class="post-title-link" itemprop="url">201号challenge：二进制炸弹06</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-18 20:08:10 / 修改时间：20:51:34" itemprop="dateCreated datePublished" datetime="2019-04-18T20:08:10+08:00">2019-04-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;不得不说这关好难搞。</p>
+<h4 id="phase——6汇编代码与分析"><a href="#phase——6汇编代码与分析" class="headerlink" title="phase——6汇编代码与分析"></a>phase——6汇编代码与分析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">08048dcf &lt;phase_6&gt;:</span><br><span class="line">//下面是一个大循环里套了个小循环 得出数组元素都小于等于6且互不相等</span><br><span class="line"> 8048dcf:	56                   	push   %esi</span><br><span class="line"> 8048dd0:	53                   	push   %ebx</span><br><span class="line"> 8048dd1:	83 ec 44             	sub    $0x44,%esp</span><br><span class="line"> 8048dd4:	8d 44 24 10          	lea    0x10(%esp),%eax</span><br><span class="line"> 8048dd8:	89 44 24 04          	mov    %eax,0x4(%esp)</span><br><span class="line"> 8048ddc:	8b 44 24 50          	mov    0x50(%esp),%eax</span><br><span class="line"> 8048de0:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048de3:	e8 54 03 00 00       	call   804913c &lt;read_six_numbers&gt;</span><br><span class="line"> 8048de8:	be 00 00 00 00       	mov    $0x0,%esi //esi=0 可以看作数组下标</span><br><span class="line"> 8048ded:	8b 44 b4 10          	mov    0x10(%esp,%esi,4),%eax //eax=（esp+4*esi+0x10） 访问数组元素   &lt;-----</span><br><span class="line"> 8048df1:	83 e8 01             	sub    $0x1,%eax //eax-1</span><br><span class="line"> 8048df4:	83 f8 05             	cmp    $0x5,%eax //eax和5比较</span><br><span class="line"> 8048df7:	76 05                	jbe    8048dfe &lt;phase_6+0x2f&gt; //小于等于时跳转 否则爆炸 也就是数组元素都小于等于6</span><br><span class="line"> 8048df9:	e8 17 03 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048dfe:	83 c6 01             	add    $0x1,%esi //esi++</span><br><span class="line"> 8048e01:	83 fe 06             	cmp    $0x6,%esi //esi和6比较</span><br><span class="line"> 8048e04:	75 07                	jne    8048e0d &lt;phase_6+0x3e&gt; //esi不等于6跳转 --&gt;</span><br><span class="line"> 8048e06:	bb 00 00 00 00       	mov    $0x0,%ebx //ebx=0</span><br><span class="line"> 8048e0b:	eb 38                	jmp    8048e45 &lt;phase_6+0x76&gt; //esi=6时 从这里跳出去 摆脱循环 ---》</span><br><span class="line"> 8048e0d:	89 f3                	mov    %esi,%ebx   // &lt;--</span><br><span class="line"></span><br><span class="line"> 8048e0f:	8b 44 9c 10          	mov    0x10(%esp,%ebx,4),%eax  //eax=（esp+4*ebx+0x10）   &lt;----</span><br><span class="line"> 8048e13:	39 44 b4 0c          	cmp    %eax,0xc(%esp,%esi,4)   //eax != （esp+4*esi+0xc）</span><br><span class="line"> 8048e17:	75 05                	jne    8048e1e &lt;phase_6+0x4f&gt;  //数组中各元素互不相同</span><br><span class="line"> 8048e19:	e8 f7 02 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048e1e:	83 c3 01             	add    $0x1,%ebx //ebx++</span><br><span class="line"> 8048e21:	83 fb 05             	cmp    $0x5,%ebx</span><br><span class="line"> 8048e24:	7e e9                	jle    8048e0f &lt;phase_6+0x40&gt; //小于等于时转移 ebx&lt;=5时向上跳 ----&gt;</span><br><span class="line"></span><br><span class="line"> 8048e26:	eb c5                	jmp    8048ded &lt;phase_6+0x1e&gt; //还是往上跳  跳的更高 走到这里就不能往下走 需要在上面某地跳转下去 -----&gt;</span><br><span class="line"></span><br><span class="line">//将起始地址为0x804c13c的6个结点地址取出 假设上面的提到的数组名为a下标为i（0-5） 则下面的代码是依次取第a[i]个节点的地址（由上可知a[i]&lt;=6 由下猜测最小应取1）</span><br><span class="line"></span><br><span class="line"> 8048e28:	8b 52 08             	mov    0x8(%edx),%edx  // &lt;----</span><br><span class="line"> 8048e2b:	83 c0 01             	add    $0x1,%eax</span><br><span class="line"> 8048e2e:	39 c8                	cmp    %ecx,%eax</span><br><span class="line"> 8048e30:	75 f6                	jne    8048e28 &lt;phase_6+0x59&gt;</span><br><span class="line"> 8048e32:	eb 05                	jmp    8048e39 &lt;phase_6+0x6a&gt;</span><br><span class="line"></span><br><span class="line"> 8048e34:	ba 3c c1 04 08       	mov    $0x804c13c,%edx  //将地址赋给edx    &lt;--</span><br><span class="line"> 8048e39:	89 54 b4 28          	mov    %edx,0x28(%esp,%esi,4) //esp+4*esi+0x28（数组中元素地址从esp+0x10到esp+0x24  此处地址在从esp+0x28起 位置是排在数组的6个元素之后）</span><br><span class="line"> 8048e3d:	83 c3 01             	add    $0x1,%ebx</span><br><span class="line"> 8048e40:	83 fb 06             	cmp    $0x6,%ebx</span><br><span class="line"> 8048e43:	74 17                	je     8048e5c &lt;phase_6+0x8d&gt; //跳出循环 -----》</span><br><span class="line"> 8048e45:	89 de                	mov    %ebx,%esi // 在上面 ebx已经置0 《---</span><br><span class="line"> 8048e47:	8b 4c 9c 10          	mov    0x10(%esp,%ebx,4),%ecx //esp+4*ebx+0x10 从数组第一个元素开始遍历</span><br><span class="line"> 8048e4b:	83 f9 01             	cmp    $0x1,%ecx //ecx与1比较</span><br><span class="line"> 8048e4e:	7e e4                	jle    8048e34 &lt;phase_6+0x65&gt; //ecx&lt;=1时跳 --&gt;</span><br><span class="line"></span><br><span class="line"> 8048e50:	b8 01 00 00 00       	mov    $0x1,%eax</span><br><span class="line"> 8048e55:	ba 3c c1 04 08       	mov    $0x804c13c,%edx</span><br><span class="line"> 8048e5a:	eb cc                	jmp    8048e28 &lt;phase_6+0x59&gt;  // ----&gt;</span><br><span class="line"></span><br><span class="line">//将前一个节点指向后一个节点</span><br><span class="line"></span><br><span class="line"> 8048e5c:	8b 5c 24 28          	mov    0x28(%esp),%ebx // 《------</span><br><span class="line"> 8048e60:	8d 44 24 2c          	lea    0x2c(%esp),%eax</span><br><span class="line"> 8048e64:	8d 74 24 40          	lea    0x40(%esp),%esi</span><br><span class="line"> 8048e68:	89 d9                	mov    %ebx,%ecx</span><br><span class="line"> 8048e6a:	8b 10                	mov    (%eax),%edx  //取出6个节点的数值 &lt;---</span><br><span class="line"> 8048e6c:	89 51 08             	mov    %edx,0x8(%ecx)</span><br><span class="line"> 8048e6f:	83 c0 04             	add    $0x4,%eax</span><br><span class="line"> 8048e72:	39 f0                	cmp    %esi,%eax</span><br><span class="line"> 8048e74:	74 04                	je     8048e7a &lt;phase_6+0xab&gt; //跳出循环--》</span><br><span class="line"> 8048e76:	89 d1                	mov    %edx,%ecx</span><br><span class="line"> 8048e78:	eb f0                	jmp    8048e6a &lt;phase_6+0x9b&gt; //---&gt;</span><br><span class="line">//约定数值的顺序 非升序的方式排列</span><br><span class="line"> 8048e7a:	c7 42 08 00 00 00 00 	movl   $0x0,0x8(%edx)  // 《--</span><br><span class="line"> 8048e81:	be 05 00 00 00       	mov    $0x5,%esi</span><br><span class="line"> 8048e86:	8b 43 08             	mov    0x8(%ebx),%eax  // &lt;----</span><br><span class="line"> 8048e89:	8b 00                	mov    (%eax),%eax</span><br><span class="line"> 8048e8b:	39 03                	cmp    %eax,(%ebx)</span><br><span class="line"> 8048e8d:	7d 05                	jge    8048e94 &lt;phase_6+0xc5&gt; //前一个数要大于等于后一个数才能不爆炸</span><br><span class="line"> 8048e8f:	e8 81 02 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048e94:	8b 5b 08             	mov    0x8(%ebx),%ebx</span><br><span class="line"> 8048e97:	83 ee 01             	sub    $0x1,%esi</span><br><span class="line"> 8048e9a:	75 ea                	jne    8048e86 &lt;phase_6+0xb7&gt; //esi不等于1时继续循环----&gt;</span><br><span class="line"> 8048e9c:	83 c4 44             	add    $0x44,%esp</span><br><span class="line"> 8048e9f:	5b                   	pop    %ebx</span><br><span class="line"> 8048ea0:	5e                   	pop    %esi</span><br><span class="line"> 8048ea1:	c3                   	ret</span><br></pre></td></tr></table></figure>
+<h4 id="phase-6拆除"><a href="#phase-6拆除" class="headerlink" title="phase_6拆除"></a>phase_6拆除</h4><p>&emsp;&emsp;这一关的代码，可以分为四部分，详细的思考过程都在代码后面加注释了，太零散这里就不重复了，简要说一下大体功能。第一部分是大循环套了个小循环，约定了数组中元素的范围并且指出各元素互不相同，设这个数组名为a。通过第二部分可以发现6个结点，打印结点查看数值：<br><img src="/images/201/b12.png" alt><br>在这6个结点中，依次取第a[i]个结点（下标i取1到6），组成链表，这个链表中的数值是非升序排列（因为6个结点的数值各不相同，所以也就是降序排列了）。根据这个规则，可以将6个结点的进行降序排列，然后得到我们需要的答案。下图是在word里做的一个结点排序前后的图：<br><img src="/images/201/b13.png" alt><br>输入结果验证，正确。<br><img src="/images/201/b14.png" alt></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/汇编语言简单了解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1992,162 +2136,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/Invisible-flag/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/09/Invisible-flag/" class="post-title-link" itemprop="url">Invisible_flag</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-09 10:54:24 / 修改时间：15:12:07" itemprop="dateCreated datePublished" datetime="2019-04-09T10:54:24+08:00">2019-04-09</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>&emsp;&emsp;看不见的flag，应该是给隐藏起来了？</p>
-<p>&emsp;&emsp;图片下载下来，下面明显少了些，而且题目中给出的提示：图片长度，查看属性，分辨率为564*400，高度比宽度要小。</p>
-<p>&emsp;&emsp;下载010 Editor，打开图片，发现将鼠标放在不同数据区域，会有相应的提示。</p>
-<p><img src="/images/InvisibleFlag.png" alt></p>
-<p>&emsp;&emsp;找到宽度的数据区域，十六进制的0190正好是400像素，将0190改为0234即564像素，这样就成了长度和宽度一样的方形图片，保存后查看图片，flag出现。</p>
-<p>&emsp;&emsp;关于PNG文件格式中IHDR的一点儿补充：</p>
-<p><img src="/images/InvisibleFlag-1.png" alt></p>
-<ul>
-<li>IHDR 头文件数据块，它包含有PNG文件中存储的图像数据的基本信息，并作为第一个数据块出现在PNG数据流中，而且一个PNG数据流中只能有一个文件头数据块。<ul>
-<li>89 50 4E 47 0D 0A 1A 0A为PNG文件署名域，用来标志该文件是PNG文件</li>
-<li>00 00 02 34 width 图像宽度，以像素为单位</li>
-<li>00 00 01 90 height 图像高度，以像素为单位</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2197,7 +2185,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2524,7 +2512,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("汇编语言简单入门");titles.push("201号challenge:二进制炸弹05");titles.push("201号challenge:二进制炸弹04");titles.push("201号challenge:二进制炸弹03");titles.push("201号challenge:二进制炸弹02");titles.push("201号challenge:二进制炸弹01");titles.push("RapidTyping");titles.push("Calculator");titles.push("网络爬虫简单上手");titles.push("Invisible_flag");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("201号challenge：二进制炸弹06");titles.push("汇编语言简单入门");titles.push("201号challenge:二进制炸弹05");titles.push("201号challenge:二进制炸弹04");titles.push("201号challenge:二进制炸弹03");titles.push("201号challenge:二进制炸弹02");titles.push("201号challenge:二进制炸弹01");titles.push("RapidTyping");titles.push("Calculator");titles.push("网络爬虫简单上手");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
