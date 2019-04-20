@@ -360,6 +360,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/Reverse-sign-in/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/20/Reverse-sign-in/" class="post-title-link" itemprop="url">Reverse_sign_in</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-20 09:25:27 / 修改时间：22:05:39" itemprop="dateCreated datePublished" datetime="2019-04-20T09:25:27+08:00">2019-04-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              &emsp;&emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下：
+__int64 __fastcall main(__int64 a1, char **a2, char **a3)&#123;  __int64 result; // rax  char s; // [rsp+0h] [rbp-30h]  unsigned __int64 v5; // [rsp+28h] [rbp-8h]  v5 = __readfsqword(0x28u);  printf("Please input your flag:", a2, a3);  __isoc99_scanf("%32s", &amp;s);  if ( strlen(&amp;s) == 32 )  &#123;    
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/20/Reverse-sign-in/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+	
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/201号challenge-二进制炸弹07/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1807,167 +1966,6 @@ phase_2汇编代码08048bb4 &lt;phase_2&gt;: 8048bb4:	53                   	push
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/Calculator/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/11/Calculator/" class="post-title-link" itemprop="url">Calculator</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-11 11:33:38 / 修改时间：16:56:39" itemprop="dateCreated datePublished" datetime="2019-04-11T11:33:38+08:00">2019-04-11</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              &emsp;&emsp;最开始，看到题，1.5s内计算出结果并提交，人工计算几乎是不可能的（对我来讲），还以为有其他蹊跷方法不需要算出结果就能获得flag，没想到真的是提交结果后给出flag。
-网络爬虫&emsp;&emsp;抱着试试看的态度，打算计算出结果提交一下试试，题中给的建议是使用Python request库，奈何我没有学过Python，现在学也不是立马就能拿来用的，不如先用java试试吧。
-&emsp;&emsp;要想使用计算机直接计算结果并提交，需要获知运算表达式，并解析表达式，使计算机能够计算出结果，然后提交给服务器，并获取服务器的返回信息，因为flag很可能就在返回信息中。题中给出的思考：服务器怎么知道获得算式的和提交答案的是一个人？经过试验，只要获取表达式和提交结果是在同一个浏览器中进行（没有清除过缓存，本地的cookie和服务器端的session通过sessionId对应）就可以，而网络爬虫可以很好的满足以上条件（网络爬虫就是模拟一个浏览器向服务器发出请求并接收返回信息），正好对爬虫有一丁点儿了解，就拿来用用了。
-解题过程&emsp;&emsp;先把解题用的代码列
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Calculator/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<div>
-	
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2017,7 +2015,7 @@ phase_2汇编代码08048bb4 &lt;phase_2&gt;: 8048bb4:	53                   	push
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2703,7 +2701,7 @@ phase_2汇编代码08048bb4 &lt;phase_2&gt;: 8048bb4:	53                   	push
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("201号challenge：二进制炸弹07");titles.push("201号challenge：二进制炸弹06");titles.push("汇编语言简单入门");titles.push("201号challenge:二进制炸弹05");titles.push("201号challenge:二进制炸弹04");titles.push("201号challenge:二进制炸弹03");titles.push("201号challenge:二进制炸弹02");titles.push("201号challenge:二进制炸弹01");titles.push("RapidTyping");titles.push("Calculator");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Reverse_sign_in");titles.push("201号challenge：二进制炸弹07");titles.push("201号challenge：二进制炸弹06");titles.push("汇编语言简单入门");titles.push("201号challenge:二进制炸弹05");titles.push("201号challenge:二进制炸弹04");titles.push("201号challenge:二进制炸弹03");titles.push("201号challenge:二进制炸弹02");titles.push("201号challenge:二进制炸弹01");titles.push("RapidTyping");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

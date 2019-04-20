@@ -103,29 +103,27 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;继续拆、、、 phase_3汇编代码123456789101112131415161718192021222324252627282930313233343536373839404108048c01 &amp;lt;phase_3&amp;gt;: 8048c01:	83 ec 2c             	sub    $0x2c,%esp 8048c04:	8d 44 24 1c">
-<meta name="keywords" content="逆向工程">
+  <meta name="description" content="&amp;emsp;&amp;emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &amp;gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下： 12345678">
+<meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="201号challenge:二进制炸弹03">
-<meta property="og:url" content="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹03/index.html">
+<meta property="og:title" content="Reverse_sign_in">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/Reverse-sign-in/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;继续拆、、、 phase_3汇编代码123456789101112131415161718192021222324252627282930313233343536373839404108048c01 &amp;lt;phase_3&amp;gt;: 8048c01:	83 ec 2c             	sub    $0x2c,%esp 8048c04:	8d 44 24 1c">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &amp;gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下： 12345678">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/201/b5.png">
-<meta property="og:image" content="http://yoursite.com/images/201/b6.png">
-<meta property="og:image" content="http://yoursite.com/images/201/b7.png">
-<meta property="og:updated_time" content="2019-04-14T13:58:39.505Z">
+<meta property="og:image" content="http://yoursite.com/images/rev1.png">
+<meta property="og:updated_time" content="2019-04-20T14:05:39.377Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="201号challenge:二进制炸弹03">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;继续拆、、、 phase_3汇编代码123456789101112131415161718192021222324252627282930313233343536373839404108048c01 &amp;lt;phase_3&amp;gt;: 8048c01:	83 ec 2c             	sub    $0x2c,%esp 8048c04:	8d 44 24 1c">
-<meta name="twitter:image" content="http://yoursite.com/images/201/b5.png">
+<meta name="twitter:title" content="Reverse_sign_in">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;给了一个Linux下可执行的rev1文件，输入命令objdump -d rev1 &amp;gt; rev1.txt 将它的汇编代码放到rev1.txt文件中，然后gdb rev 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下： 12345678">
+<meta name="twitter:image" content="http://yoursite.com/images/rev1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹03/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/20/Reverse-sign-in/">
 
 
 
@@ -135,7 +133,7 @@
   };
 </script>
 
-  <title>201号challenge:二进制炸弹03 | DreamFly</title>
+  <title>Reverse_sign_in | DreamFly</title>
   
 
 
@@ -365,7 +363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹03/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/Reverse-sign-in/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenbo Lee">
@@ -382,7 +380,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">201号challenge:二进制炸弹03
+          <h1 class="post-title" itemprop="name headline">Reverse_sign_in
 
               
             
@@ -408,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2019-04-14 21:00:53 / 修改时间：21:58:39" itemprop="dateCreated datePublished" datetime="2019-04-14T21:00:53+08:00">2019-04-14</time>
+              <time title="创建时间：2019-04-20 09:25:27 / 修改时间：22:05:39" itemprop="dateCreated datePublished" datetime="2019-04-20T09:25:27+08:00">2019-04-20</time>
             
 
             
@@ -453,35 +451,13 @@
       
 
       
-        <p>&emsp;&emsp;继续拆、、、</p>
-<h5 id="phase-3汇编代码"><a href="#phase-3汇编代码" class="headerlink" title="phase_3汇编代码"></a>phase_3汇编代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">08048c01 &lt;phase_3&gt;:</span><br><span class="line"> 8048c01:	83 ec 2c             	sub    $0x2c,%esp</span><br><span class="line"> 8048c04:	8d 44 24 1c          	lea    0x1c(%esp),%eax</span><br><span class="line"> 8048c08:	89 44 24 0c          	mov    %eax,0xc(%esp)</span><br><span class="line"> 8048c0c:	8d 44 24 18          	lea    0x18(%esp),%eax</span><br><span class="line"> 8048c10:	89 44 24 08          	mov    %eax,0x8(%esp)</span><br><span class="line"> 8048c14:	c7 44 24 04 0f a3 04 	movl   $0x804a30f,0x4(%esp) //(gdb) x/sb 0x804a30f =&gt; 0x804a30f: &quot;%d %d&quot;</span><br><span class="line"> 8048c1b:	08 </span><br><span class="line"> 8048c1c:	8b 44 24 30          	mov    0x30(%esp),%eax</span><br><span class="line"> 8048c20:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048c23:	e8 38 fc ff ff       	call   8048860 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line"> 8048c28:	83 f8 01             	cmp    $0x1,%eax //%eax和1比较</span><br><span class="line"> 8048c2b:	7f 05                	jg     8048c32 &lt;phase_3+0x31&gt; //大于1就跳转 否则爆炸</span><br><span class="line"> 8048c2d:	e8 e3 04 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048c32:	83 7c 24 18 07       	cmpl   $0x7,0x18(%esp) //0x18(%esp)和7比较</span><br><span class="line"> 8048c37:	77 3c                	ja     8048c75 &lt;phase_3+0x74&gt; //大于7则跳转至爆炸 所以不能大于7</span><br><span class="line"> 8048c39:	8b 44 24 18          	mov    0x18(%esp),%eax</span><br><span class="line"> 8048c3d:	ff 24 85 a0 a1 04 08 	jmp    *0x804a1a0(,%eax,4) </span><br><span class="line"> 8048c44:	b8 5c 03 00 00       	mov    $0x35c,%eax   //gdb p/x *0x804a1a0</span><br><span class="line"> 8048c49:	eb 3b                	jmp    8048c86 &lt;phase_3+0x85&gt; </span><br><span class="line"> 8048c4b:	b8 49 01 00 00       	mov    $0x149,%eax</span><br><span class="line"> 8048c50:	eb 34                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c52:	b8 4c 02 00 00       	mov    $0x24c,%eax</span><br><span class="line"> 8048c57:	eb 2d                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c59:	b8 ee 00 00 00       	mov    $0xee,%eax</span><br><span class="line"> 8048c5e:	eb 26                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c60:	b8 20 03 00 00       	mov    $0x320,%eax</span><br><span class="line"> 8048c65:	eb 1f                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c67:	b8 96 00 00 00       	mov    $0x96,%eax</span><br><span class="line"> 8048c6c:	eb 18                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c6e:	b8 42 03 00 00       	mov    $0x342,%eax</span><br><span class="line"> 8048c73:	eb 11                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c75:	e8 9b 04 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048c7a:	b8 00 00 00 00       	mov    $0x0,%eax</span><br><span class="line"> 8048c7f:	eb 05                	jmp    8048c86 &lt;phase_3+0x85&gt;</span><br><span class="line"> 8048c81:	b8 1d 02 00 00       	mov    $0x21d,%eax</span><br><span class="line"> 8048c86:	3b 44 24 1c          	cmp    0x1c(%esp),%eax //都往这里跳 出口条件判定</span><br><span class="line"> 8048c8a:	74 05                	je     8048c91 &lt;phase_3+0x90&gt; //0x1c(%esp),%eax相等就可以结束了</span><br><span class="line"> 8048c8c:	e8 84 04 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048c91:	83 c4 2c             	add    $0x2c,%esp</span><br><span class="line"> 8048c94:	c3                   	ret</span><br></pre></td></tr></table></figure>
-<h5 id="phase-3汇编指令"><a href="#phase-3汇编指令" class="headerlink" title="phase_3汇编指令"></a>phase_3汇编指令</h5><table>
-<thead>
-<tr>
-<th>指令</th>
-<th>注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>lea</td>
-<td>计算源操作数内存地址放进目的数</td>
-</tr>
-<tr>
-<td>jg</td>
-<td>有符号数大于则跳转</td>
-</tr>
-<tr>
-<td>ja</td>
-<td>无符号大于则跳转</td>
-</tr>
-<tr>
-<td>je</td>
-<td>等于则跳转</td>
-</tr>
-</tbody>
-</table>
-<h5 id="phase-3拆除"><a href="#phase-3拆除" class="headerlink" title="phase_3拆除"></a>phase_3拆除</h5><p>&emsp;&emsp;使用查看内存命令，查看0x804a30f<br><img src="/images/201/b5.png" alt><br>需要输入两个整数，sscanf()函数如果执行成功返回值是参数个数，否则返回EOF，有代码知返回参数大于1，所以解除炸弹的字符串应该是两个整数。0x18(%esp)不能大于7，查看<code>*0x804a1a0</code>：<br><img src="/images/201/b6.png" alt><br>所以如果0x18(%esp)小于等于7则跳转到8048c44+4*%eax，0x18(%esp)是第一个整数，0x1c(%esp)是第二个整数，这是一个switch分支结构，第一个数的不同，会导致第二个数也不相同，结果应该有8组，第一个数取0-7，第二个数按跳转规则计算即可。<img src="/images/201/b7.png" alt></p>
+        <p>&emsp;&emsp;给了一个Linux下可执行的rev1文件，输入命令<code>objdump -d rev1 &gt; rev1.txt</code> 将它的汇编代码放到rev1.txt文件中，然后<code>gdb rev</code> 将rev给run了一下，运行中让输入flag，那么正确的flag应该就是此处要输入的。看了看汇编代码，嗯，不够直观，于是把rev在IDA中打开，将主函数生成伪代码，进行分析。伪代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">__int64 __<span class="function">fastcall <span class="title">main</span><span class="params">(__int64 a1, <span class="keyword">char</span> **a2, <span class="keyword">char</span> **a3)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __int64 result; <span class="comment">// rax</span></span><br><span class="line">  <span class="keyword">char</span> s; <span class="comment">// [rsp+0h] [rbp-30h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v5; <span class="comment">// [rsp+28h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v5 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Please input your flag:"</span>, a2, a3);</span><br><span class="line">  __isoc99_scanf(<span class="string">"%32s"</span>, &amp;s);</span><br><span class="line">  <span class="keyword">if</span> ( <span class="built_in">strlen</span>(&amp;s) == <span class="number">32</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( (<span class="keyword">unsigned</span> <span class="keyword">int</span>)sub_400686((__int64)&amp;s) )</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"Right!"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"Wrong!"</span>);</span><br><span class="line">    result = <span class="number">0L</span>L;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Wrong!"</span>);</span><br><span class="line">    result = <span class="number">0L</span>L;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;只有当字符串s的长度为32且sub_400686()函数的返回值非0时，才会输出”Right”，答案应该在这个函数中寻找，跳转到这个函数的伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">signed</span> __int64 __<span class="function">fastcall <span class="title">sub_400686</span><span class="params">(__int64 a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">signed</span> <span class="keyword">int</span> i; <span class="comment">// [rsp+Ch] [rbp-Ch]</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt;= <span class="number">31</span>; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( (<span class="keyword">char</span>)(*(_BYTE *)(i + a1) ^ byte_400818[i]) != i )</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0L</span>L;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1L</span>L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中byte_400818是一个数组：<img src="/images/rev1.png" alt>该函数的大概意思是，将字符串中下标i的字符与数组中下标为i的数进行异或运算，要保证结果与下标i相等。所以可以根据这个函数写个代码来反向求出字符串。另外，2dup(60h)表示两个十六进制数0x60。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">32</span>];</span><br><span class="line">    <span class="keyword">int</span> b[]=&#123;<span class="number">0x66</span>,<span class="number">0x6d</span>,<span class="number">0x63</span>,<span class="number">0x64</span>,<span class="number">0x7f</span>,<span class="number">0x3c</span>,<span class="number">0x36</span>,<span class="number">0x72</span>,<span class="number">0x57</span>,<span class="number">0x42</span>,</span><br><span class="line">    <span class="number">0x64</span>,<span class="number">0x3b</span>,<span class="number">0x7b</span>,<span class="number">0x52</span>,<span class="number">0x7c</span>,<span class="number">0x3c</span>,<span class="number">0x66</span>,<span class="number">0x54</span>,<span class="number">0x60</span>,<span class="number">0x60</span>,</span><br><span class="line">    <span class="number">0x27</span>,<span class="number">0x4a</span>,<span class="number">0x49</span>,<span class="number">0x7f</span>,<span class="number">0x71</span>,<span class="number">0x58</span>,<span class="number">0x52</span>,<span class="number">0x72</span>,<span class="number">0x7d</span>,<span class="number">0x75</span>,</span><br><span class="line">    <span class="number">0x2a</span>,<span class="number">0x62</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">31</span>;i++)</span><br><span class="line">        a[i]=(<span class="keyword">char</span>)b[i]^i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">31</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;运行一下，即可打印输出flag。 </p>
 
       
     </div>
@@ -522,7 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/逆向工程/" rel="tag"><i class="fa fa-tag"></i> 逆向工程</a>
+            <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
           
         </div>
       
@@ -535,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/14/201号challenge-二进制炸弹02/" rel="next" title="201号challenge:二进制炸弹02">
-                <i class="fa fa-chevron-left"></i> 201号challenge:二进制炸弹02
+              <a href="/2019/04/19/201号challenge-二进制炸弹07/" rel="next" title="201号challenge：二进制炸弹07">
+                <i class="fa fa-chevron-left"></i> 201号challenge：二进制炸弹07
               </a>
             
           </div>
@@ -544,10 +520,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/15/201号challenge-二进制炸弹04/" rel="prev" title="201号challenge:二进制炸弹04">
-                201号challenge:二进制炸弹04 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,17 +564,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -710,23 +673,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#phase-3汇编代码"><span class="nav-number">1.</span> <span class="nav-text">phase_3汇编代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#phase-3汇编指令"><span class="nav-number">2.</span> <span class="nav-text">phase_3汇编指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#phase-3拆除"><span class="nav-number">3.</span> <span class="nav-text">phase_3拆除</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -1312,13 +1258,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = '201号challenge:二进制炸弹03'.length > 0
+      var isPost = 'Reverse_sign_in'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '201号challenge:二进制炸弹03'
+        var title = 'Reverse_sign_in'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
