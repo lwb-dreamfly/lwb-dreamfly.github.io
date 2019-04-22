@@ -103,29 +103,25 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;逐渐进入白热化、、、 phase_5汇编代码与解析1234567891011121314151617181920212223242526272829303132333408048d5b &amp;lt;phase_5&amp;gt;: 8048d5b:	83 ec 2c             	sub    $0x2c,%esp 8048d5e:	8d 44 24 1c">
-<meta name="keywords" content="逆向工程">
+  <meta name="description" content="&amp;emsp;&amp;emsp;打算今天开始系统性学习汇编语言，使用教材为王爽老师编写的《汇编语言（第三版）》，会将自己认为重要的知识点整理下来，以加深印象，且便于日后回顾查阅。 1.基础知识1.1所谓汇编&amp;emsp;&amp;emsp;机器语言是机器指令的集合，是一列二进制数字，相当难记忆，使用起来很麻烦，所以就诞生了汇编语言。汇编语言的主题是汇编指令，汇编指令是机器指令便于记忆的书写格式。我们可以用汇编指令编">
+<meta name="keywords" content="汇编语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="201号challenge:二进制炸弹05">
-<meta property="og:url" content="http://yoursite.com/2019/04/16/201号challenge-二进制炸弹05/index.html">
+<meta property="og:title" content="汇编语言学习笔记01">
+<meta property="og:url" content="http://yoursite.com/2019/04/22/汇编语言学习笔记01/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;逐渐进入白热化、、、 phase_5汇编代码与解析1234567891011121314151617181920212223242526272829303132333408048d5b &amp;lt;phase_5&amp;gt;: 8048d5b:	83 ec 2c             	sub    $0x2c,%esp 8048d5e:	8d 44 24 1c">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;打算今天开始系统性学习汇编语言，使用教材为王爽老师编写的《汇编语言（第三版）》，会将自己认为重要的知识点整理下来，以加深印象，且便于日后回顾查阅。 1.基础知识1.1所谓汇编&amp;emsp;&amp;emsp;机器语言是机器指令的集合，是一列二进制数字，相当难记忆，使用起来很麻烦，所以就诞生了汇编语言。汇编语言的主题是汇编指令，汇编指令是机器指令便于记忆的书写格式。我们可以用汇编指令编">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/201/b9.png">
-<meta property="og:image" content="http://yoursite.com/images/201/b10.png">
-<meta property="og:image" content="http://yoursite.com/images/201/b11.png">
-<meta property="og:updated_time" content="2019-04-16T10:40:37.944Z">
+<meta property="og:updated_time" content="2019-04-22T11:19:43.760Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="201号challenge:二进制炸弹05">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;逐渐进入白热化、、、 phase_5汇编代码与解析1234567891011121314151617181920212223242526272829303132333408048d5b &amp;lt;phase_5&amp;gt;: 8048d5b:	83 ec 2c             	sub    $0x2c,%esp 8048d5e:	8d 44 24 1c">
-<meta name="twitter:image" content="http://yoursite.com/images/201/b9.png">
+<meta name="twitter:title" content="汇编语言学习笔记01">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;打算今天开始系统性学习汇编语言，使用教材为王爽老师编写的《汇编语言（第三版）》，会将自己认为重要的知识点整理下来，以加深印象，且便于日后回顾查阅。 1.基础知识1.1所谓汇编&amp;emsp;&amp;emsp;机器语言是机器指令的集合，是一列二进制数字，相当难记忆，使用起来很麻烦，所以就诞生了汇编语言。汇编语言的主题是汇编指令，汇编指令是机器指令便于记忆的书写格式。我们可以用汇编指令编">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/16/201号challenge-二进制炸弹05/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/22/汇编语言学习笔记01/">
 
 
 
@@ -135,7 +131,7 @@
   };
 </script>
 
-  <title>201号challenge:二进制炸弹05 | DreamFly</title>
+  <title>汇编语言学习笔记01 | DreamFly</title>
   
 
 
@@ -365,7 +361,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/201号challenge-二进制炸弹05/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/汇编语言学习笔记01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenbo Lee">
@@ -382,7 +378,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">201号challenge:二进制炸弹05
+          <h1 class="post-title" itemprop="name headline">汇编语言学习笔记01
 
               
             
@@ -408,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2019-04-16 10:04:53 / 修改时间：18:40:37" itemprop="dateCreated datePublished" datetime="2019-04-16T10:04:53+08:00">2019-04-16</time>
+              <time title="创建时间：2019-04-22 10:07:31 / 修改时间：19:19:43" itemprop="dateCreated datePublished" datetime="2019-04-22T10:07:31+08:00">2019-04-22</time>
             
 
             
@@ -453,96 +449,33 @@
       
 
       
-        <p>&emsp;&emsp;逐渐进入白热化、、、</p>
-<h4 id="phase-5汇编代码与解析"><a href="#phase-5汇编代码与解析" class="headerlink" title="phase_5汇编代码与解析"></a>phase_5汇编代码与解析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">08048d5b &lt;phase_5&gt;:</span><br><span class="line"> 8048d5b:	83 ec 2c             	sub    $0x2c,%esp</span><br><span class="line"> 8048d5e:	8d 44 24 1c          	lea    0x1c(%esp),%eax</span><br><span class="line"> 8048d62:	89 44 24 0c          	mov    %eax,0xc(%esp)</span><br><span class="line"> 8048d66:	8d 44 24 18          	lea    0x18(%esp),%eax</span><br><span class="line"> 8048d6a:	89 44 24 08          	mov    %eax,0x8(%esp)</span><br><span class="line"> 8048d6e:	c7 44 24 04 0f a3 04 	movl   $0x804a30f,0x4(%esp) //输入格式为两个整数</span><br><span class="line"> 8048d75:	08 </span><br><span class="line"> 8048d76:	8b 44 24 30          	mov    0x30(%esp),%eax</span><br><span class="line"> 8048d7a:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048d7d:	e8 de fa ff ff       	call   8048860 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line"> 8048d82:	83 f8 01             	cmp    $0x1,%eax //sscanf()返回值和1比较</span><br><span class="line"> 8048d85:	7f 05                	jg     8048d8c &lt;phase_5+0x31&gt; //%eax&gt;1 否则爆炸  输入大于一个数  应该是输两个</span><br><span class="line"> 8048d87:	e8 89 03 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048d8c:	8b 44 24 18          	mov    0x18(%esp),%eax //结合下面分析此处的0x18(%esp)应该为所求的第一个整数</span><br><span class="line"> 8048d90:	83 e0 0f             	and    $0xf,%eax //按位与 结合下面的判断 此时%eax！=15（二进制1111） 15以下的非负数和0xf想与还是本身</span><br><span class="line"> 8048d93:	89 44 24 18          	mov    %eax,0x18(%esp)</span><br><span class="line"> 8048d97:	83 f8 0f             	cmp    $0xf,%eax</span><br><span class="line"> 8048d9a:	74 2a                	je     8048dc6 &lt;phase_5+0x6b&gt; //%eax!=15 否则爆炸</span><br><span class="line"> 8048d9c:	b9 00 00 00 00       	mov    $0x0,%ecx //ecx=0</span><br><span class="line"> 8048da1:	ba 00 00 00 00       	mov    $0x0,%edx //edx=0</span><br><span class="line"> 8048da6:	83 c2 01             	add    $0x1,%edx //edx=1  &lt;--跳回此地 执行edx++</span><br><span class="line"> 8048da9:	8b 04 85 c0 a1 04 08 	mov    0x804a1c0(,%eax,4),%eax //从数组中取值 eax做数组下标取出的值赋给eax</span><br><span class="line"> 8048db0:	01 c1                	add    %eax,%ecx //ecx=eax+ecx</span><br><span class="line"> 8048db2:	83 f8 0f             	cmp    $0xf,%eax //比较eax和15</span><br><span class="line"> 8048db5:	75 ef                	jne    8048da6 &lt;phase_5+0x4b&gt; //eax不等于15就又跳回去了 最终eax要取到15--&gt;</span><br><span class="line"> 8048db7:	89 44 24 18          	mov    %eax,0x18(%esp)</span><br><span class="line"> 8048dbb:	83 fa 0f             	cmp    $0xf,%edx //edx和15比 edx起始值为0 每次循环加1 所有循环了15次</span><br><span class="line"> 8048dbe:	75 06                	jne    8048dc6 &lt;phase_5+0x6b&gt; //edx不等于15就爆炸 所以要edx=15</span><br><span class="line"> 8048dc0:	3b 4c 24 1c          	cmp    0x1c(%esp),%ecx //0x1c(%esp)应该是第二个整数 它等于ecx</span><br><span class="line"> 8048dc4:	74 05                	je     8048dcb &lt;phase_5+0x70&gt; //0x1c(%esp)==%ecx</span><br><span class="line"> 8048dc6:	e8 4a 03 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048dcb:	83 c4 2c             	add    $0x2c,%esp</span><br><span class="line"> 8048dce:	c3                   	ret</span><br></pre></td></tr></table></figure>
-<h4 id="phase-5拆除"><a href="#phase-5拆除" class="headerlink" title="phase_5拆除"></a>phase_5拆除</h4><p>&emsp;&emsp;简单说一下上面的代码的思路，最关键的部分在循环阶段，输入的第一个整数eax作为数组下标，每次循环取出下标对应的数组元素值赋给该整数eax，这个eax初始值不等于15但是经过15次循环后最终取值取到15，第二个整数的值等于数组从下标1-15对应的元素之和。这个题很关键的一点在确定数组的元素值，然后根据最后的数值逆推15次循环之前的初试数值。一开始尝试一个一个地址的查看数组元素：<img src="/images/201/b9.png" alt>太慢太耗费时间，然后又发现了新的查看数组元素的方法<code>p *数组首地址(可以是数组名)@数组长度</code> 尝试了下：<img src="/images/201/b10.png" alt>通过上图数据数组下标可以从0取到15，其实通过汇编代码也可以确定，因为最终循环结束是起标志作用的edx等15时。根据数组元素与代码逻辑，逐一逆推：</p>
-<table>
-<thead>
-<tr>
-<th>edx</th>
-<th>eax</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>5</td>
-<td>12</td>
-</tr>
-<tr>
-<td>2</td>
-<td>12</td>
-<td>3</td>
-</tr>
-<tr>
-<td>3</td>
-<td>3</td>
-<td>7</td>
-</tr>
-<tr>
-<td>4</td>
-<td>7</td>
-<td>11</td>
-</tr>
-<tr>
-<td>5</td>
-<td>11</td>
-<td>13</td>
-</tr>
-<tr>
-<td>6</td>
-<td>13</td>
-<td>9</td>
-</tr>
-<tr>
-<td>7</td>
-<td>9</td>
-<td>4</td>
-</tr>
-<tr>
-<td>8</td>
-<td>4</td>
-<td>8</td>
-</tr>
-<tr>
-<td>9</td>
-<td>8</td>
-<td>0</td>
-</tr>
-<tr>
-<td>10</td>
-<td>0</td>
-<td>10</td>
-</tr>
-<tr>
-<td>11</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr>
-<td>12</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr>
-<td>13</td>
-<td>2</td>
-<td>14</td>
-</tr>
-<tr>
-<td>14</td>
-<td>14</td>
-<td>6</td>
-</tr>
-<tr>
-<td>15</td>
-<td>6</td>
-<td>15</td>
-</tr>
-</tbody>
-</table>
-<p>经过分析可以发现，第一个整数的值是5，第二个整数的值是第三列所有数的和115。<img src="/images/201/b11.png" alt> </p>
+        <p>&emsp;&emsp;打算今天开始系统性学习汇编语言，使用教材为王爽老师编写的《汇编语言（第三版）》，会将自己认为重要的知识点整理下来，以加深印象，且便于日后回顾查阅。</p>
+<h3 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h3><h4 id="1-1所谓汇编"><a href="#1-1所谓汇编" class="headerlink" title="1.1所谓汇编"></a>1.1所谓汇编</h4><p>&emsp;&emsp;机器语言是机器指令的集合，是一列二进制数字，相当难记忆，使用起来很麻烦，所以就诞生了汇编语言。汇编语言的主题是汇编指令，汇编指令是机器指令便于记忆的书写格式。我们可以用汇编指令编写源程序，然后通过编译器将汇编指令转换成机器指令，由计算机最终执行。</p>
+<h4 id="1-2汇编语言的组成"><a href="#1-2汇编语言的组成" class="headerlink" title="1.2汇编语言的组成"></a>1.2汇编语言的组成</h4><p>（1）汇编指令：机器码的助记符，有对应的机器码。</p>
+<p>（2）伪指令：没有对应的机器码，由编译器执行，计算机并不执行。</p>
+<p>（3）其他符号：入+、-、*、/等，由编译器识别，没有对应的机器码。</p>
+<a id="more"></a>
+<h4 id="1-3指令和数据"><a href="#1-3指令和数据" class="headerlink" title="1.3指令和数据"></a>1.3指令和数据</h4><p>&emsp;&emsp;课本中在介绍指令和数据时，只提到了指令和数据没有任何区别，都是二进制信息，CPU在工作的时候可以自己区分，为同样的信息赋予不同的意义。这里根据自己的积累和理解补充一下，一般计算机都是采用冯诺依曼结构，将指令和数据不是分开存储，而是都以二进制的形式放在存储器中，CPU可以根据指令周期的不同阶段来区分是指令还是数据。通常在取指阶段取出的是指令，在执行阶段取出的是数据。</p>
+<p>&emsp;&emsp;另外，指令和数据只在存储器中存放的，也就是在内存中。磁盘不同于内存，磁盘上的数据或程序如果不读入内存中，就无法被CPU使用。</p>
+<h4 id="1-4存储单元"><a href="#1-4存储单元" class="headerlink" title="1.4存储单元"></a>1.4存储单元</h4><p>&emsp;&emsp;存储器被划分为若干个存储单元，每个存储单元从0开始顺序编号。电子计算机的最小信息单位是bit（比特），也就是一个二进制位。8个bit组成一个Byte（字节）。微型机存储器的存储单元可以存储一个Byte，即8个二进制位。微机存储器的容量是以字节为最小单位来计算的。</p>
+<h4 id="1-5CPU对存储器的读写"><a href="#1-5CPU对存储器的读写" class="headerlink" title="1.5CPU对存储器的读写"></a>1.5CPU对存储器的读写</h4><p>&emsp;&emsp;CPU要进行数据的读写，必须和外部期间进行3类信息交互：</p>
+<ul>
+<li>存储单元的地址（地址信息）；</li>
+<li>器件的选择，读或写的命令（控制信息）；</li>
+<li>读或写的数据（数据信息）。</li>
+</ul>
+<p>&emsp;&emsp;CPU通过导线与存储器交互，计算机中专门连接CPU和其他芯片的导线称为总线，总线在逻辑上又分为3类，地址总线、控制总线和数据总线。</p>
+<h4 id="1-6总线"><a href="#1-6总线" class="headerlink" title="1.6总线"></a>1.6总线</h4><ul>
+<li>CPU通过<strong>地址总线</strong>来指定存储器单元。CPU可以对多少个存储单元进行寻址，取决于地址总线上能传送多少个不同的信息，即<strong>地址总线的宽度决定了CPU的寻址能力</strong>。一个CPU有N根地址线，可以说这个CPU的地址总线宽度为N，最多可以寻找2的N次方个内存单元。</li>
+<li>CPU与内存或其他器件之间的数据传送是通过<strong>数据总线</strong>来进行的。<strong>数据总线的宽度决定了CPU和外界的数据传送速度，决定了与其他器件进行数据传送时的一次数据传送量</strong>。N根数据总线一次可传送一个N为二进制数据（N/8个字节）。</li>
+<li>CPU对外部器件的控制通过<strong>控制总线</strong>来进行。有多少根控制总线，就意味着CPU提供了对外部器件的多少种控制。<strong>控制总线的宽度决定了CPU对外部器件的控制能力。</strong></li>
+</ul>
+<h4 id="1-7存储器与内存地址空间"><a href="#1-7存储器与内存地址空间" class="headerlink" title="1.7存储器与内存地址空间"></a>1.7存储器与内存地址空间</h4><p>&emsp;&emsp;一台PC机装有多个存储芯片，从读写属性上，可以分为两类：</p>
+<ul>
+<li>随机存储器（RAM）可读可写，必须带电存储，关机后存储的内容丢失；</li>
+<li>只读存储器（ROM）只能读取不能写入，关机后其中内弄不丢失。</li>
+</ul>
+<p>&emsp;&emsp;对CPU来讲，系统中的所有物理存储器中的存储单元都处于一个统一的逻辑存储器中，它的容量受CPU寻址能力的限制。这个逻辑存储器就是我们所说的内存地址空间。每个物理存储器在逻辑存储器中占有一个地址段，即一段地址空间，CPU在这段地址空间中读写数据，实际上就是在相对应的物理存储器中读写数据。</p>
 
       
     </div>
@@ -583,7 +516,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/逆向工程/" rel="tag"><i class="fa fa-tag"></i> 逆向工程</a>
+            <a href="/tags/汇编语言/" rel="tag"><i class="fa fa-tag"></i> 汇编语言</a>
           
         </div>
       
@@ -596,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/15/201号challenge-二进制炸弹04/" rel="next" title="201号challenge:二进制炸弹04">
-                <i class="fa fa-chevron-left"></i> 201号challenge:二进制炸弹04
+              <a href="/2019/04/21/Basic-PHP/" rel="next" title="Basic_PHP">
+                <i class="fa fa-chevron-left"></i> Basic_PHP
               </a>
             
           </div>
@@ -605,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/17/汇编语言简单了解/" rel="prev" title="汇编语言简单入门">
-                汇编语言简单入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-5汇编代码与解析"><span class="nav-number">1.</span> <span class="nav-text">phase_5汇编代码与解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-5拆除"><span class="nav-number">2.</span> <span class="nav-text">phase_5拆除</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基础知识"><span class="nav-number">1.</span> <span class="nav-text">1.基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1所谓汇编"><span class="nav-number">1.1.</span> <span class="nav-text">1.1所谓汇编</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2汇编语言的组成"><span class="nav-number">1.2.</span> <span class="nav-text">1.2汇编语言的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3指令和数据"><span class="nav-number">1.3.</span> <span class="nav-text">1.3指令和数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4存储单元"><span class="nav-number">1.4.</span> <span class="nav-text">1.4存储单元</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5CPU对存储器的读写"><span class="nav-number">1.5.</span> <span class="nav-text">1.5CPU对存储器的读写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6总线"><span class="nav-number">1.6.</span> <span class="nav-text">1.6总线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7存储器与内存地址空间"><span class="nav-number">1.7.</span> <span class="nav-text">1.7存储器与内存地址空间</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1373,13 +1302,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = '201号challenge:二进制炸弹05'.length > 0
+      var isPost = '汇编语言学习笔记01'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '201号challenge:二进制炸弹05'
+        var title = '汇编语言学习笔记01'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
