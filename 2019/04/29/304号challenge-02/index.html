@@ -103,25 +103,25 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;关于gdb x命令Examine memory: x/FMT ADDRESS.ADDRESS is an expression for the memory address to examine. FMT is a repeat count followed by a format letter and a size letter.Format letters are o(">
-<meta name="keywords" content="gdb">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Basic_PHP">
-<meta property="og:url" content="http://yoursite.com/temp/gdb-(ing).html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;在主函数中，通过v4 = sub_CE0(a1[1]); 调用sub_CE0函数。该函数的返回值是一个字符串类型，有指针变量v4来接收返回值，函数有一个参数，为a1[1]，应该也是一个字符串，a1是二位字符串数组名。接下来就分析一下这个函数。">
+<meta name="keywords" content="逆向工程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="304号challenge_02">
+<meta property="og:url" content="http://yoursite.com/2019/04/29/304号challenge-02/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;关于gdb x命令Examine memory: x/FMT ADDRESS.ADDRESS is an expression for the memory address to examine. FMT is a repeat count followed by a format letter and a size letter.Format letters are o(">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在主函数中，通过v4 = sub_CE0(a1[1]); 调用sub_CE0函数。该函数的返回值是一个字符串类型，有指针变量v4来接收返回值，函数有一个参数，为a1[1]，应该也是一个字符串，a1是二位字符串数组名。接下来就分析一下这个函数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-28T09:38:17.606Z">
+<meta property="og:updated_time" content="2019-04-29T13:31:01.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic_PHP">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;关于gdb x命令Examine memory: x/FMT ADDRESS.ADDRESS is an expression for the memory address to examine. FMT is a repeat count followed by a format letter and a size letter.Format letters are o(">
+<meta name="twitter:title" content="304号challenge_02">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在主函数中，通过v4 = sub_CE0(a1[1]); 调用sub_CE0函数。该函数的返回值是一个字符串类型，有指针变量v4来接收返回值，函数有一个参数，为a1[1]，应该也是一个字符串，a1是二位字符串数组名。接下来就分析一下这个函数。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/temp/gdb-(ing).html">
+  <link rel="canonical" href="http://yoursite.com/2019/04/29/304号challenge-02/">
 
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>Basic_PHP | DreamFly</title>
+  <title>304号challenge_02 | DreamFly</title>
   
 
 
@@ -341,84 +341,215 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/304号challenge-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Basic_PHP
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>&emsp;&emsp;关于gdb</p>
-<p>x命令<br>Examine memory: x/FMT ADDRESS.<br>ADDRESS is an expression for the memory address to examine.</p>
-<p>FMT is a repeat count followed by a format letter and a size letter.<br>Format letters are o(octal), x(hex), d(decimal), u(unsigned decimal), t(binary), f(float), a(address), i(instruction), c(char), s(string) and z(hex, zero padded on the left).<br>Size letters are b(byte), h(halfword), w(word), g(giant, 8 bytes).<br>The specified number of objects of the specified size are printed<br>according to the format.  If a negative number is specified, memory is<br>examined backward from the address.</p>
-<p>Defaults for format and size letters are those previously used.<br>Default count is 1.  Default address is following last thing printed<br>with this command or “print”.</p>
-<p>o(octal), x(hex), d(decimal), u(unsigned decimal),<br>t(binary), f(float), a(address), i(instruction), c(char), s(string),<br>z(hex, zero padded on the left)</p>
-<p>o x d u t f a i c s z<br>b h w g<br>x/sb</p>
-<p>p<br>o x d u t f a i c s z</p>
-<p>p *数组首地址@数组长度<br>输出数组所有数据</p>
-<p>objdump -d bomb &gt; asm.txt 生产汇编代码</p>
-<p>objdump -d rev1 &gt; rev1.txt</p>
-<p>p命令<br>Print value of expression EXP.<br>Variables accessible are those of the lexical environment of the selected<br>stack frame, plus all those whose scope is global or an entire file.</p>
-<p>$NUM gets previous value number NUM.  $ and $$ are the last two values.<br>$$NUM refers to NUM’th value back from the last one.<br>Names starting with $ refer to registers (with the values they would have<br>if the program were to return to the stack frame now selected, restoring<br>all registers saved by frames farther in) or else to debugger<br>“convenience” variables (any such name not a known register).<br>Use assignment expressions to give values to convenience variables.</p>
-<p>{TYPE}ADREXP refers to a datum of data type TYPE, located at address ADREXP.<br>@ is a binary operator for treating consecutive data objects<br>anywhere in memory as an array.  FOO@NUM gives an array whose first<br>element is FOO, whose second element is stored in the space following<br>where FOO is stored, etc.  FOO must be an expression whose value<br>resides in memory.</p>
-<p>EXP may be preceded with /FMT, where FMT is a format letter<br>but no count or size letter (see “x” command).</p>
+          <h1 class="post-title" itemprop="name headline">304号challenge_02
 
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-29 19:55:31 / 修改时间：21:31:01" itemprop="dateCreated datePublished" datetime="2019-04-29T19:55:31+08:00">2019-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>&emsp;&emsp;在主函数中，通过<code>v4 = sub_CE0(a1[1]);</code> 调用sub_CE0函数。该函数的返回值是一个字符串类型，有指针变量v4来接收返回值，函数有一个参数，为a1[1]，应该也是一个字符串，a1是二位字符串数组名。接下来就分析一下这个函数。</p>
+<blockquote>
+<a id="more"></a>
+</blockquote>
+<p>&emsp;&emsp;sub_CE0函数代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *__<span class="function">fastcall <span class="title">sub_CE0</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  FILE *v1; <span class="comment">// rax</span></span><br><span class="line">  FILE *v2; <span class="comment">// rbx</span></span><br><span class="line">  __int64 v3; <span class="comment">// r15</span></span><br><span class="line">  <span class="keyword">void</span> *v4; <span class="comment">// r14</span></span><br><span class="line">  <span class="keyword">char</span> *v5; <span class="comment">// rbx</span></span><br><span class="line"></span><br><span class="line">  v1 = fopen(a1, <span class="string">"rb"</span>);</span><br><span class="line">  v2 = v1;</span><br><span class="line">  <span class="keyword">if</span> ( !v1 )</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0L</span>L;</span><br><span class="line">  fseek(v1, <span class="number">0L</span>L, <span class="number">2</span>);</span><br><span class="line">  v3 = ftell(v2);</span><br><span class="line">  fseek(v2, <span class="number">0L</span>L, <span class="number">0</span>);</span><br><span class="line">  v4 = <span class="built_in">malloc</span>(<span class="number">0x10000</span>uLL);</span><br><span class="line">  <span class="built_in">memset</span>(v4, <span class="number">0</span>, <span class="number">0x10000</span>uLL);</span><br><span class="line">  fread(v4, <span class="number">1u</span>LL, v3, v2);</span><br><span class="line">  fclose(v2);</span><br><span class="line">  _mm_storeu_si128(</span><br><span class="line">    (__m128i *)&amp;unk_202018 + <span class="number">4096</span>,</span><br><span class="line">    _mm_unpacklo_epi64((__m128i)(<span class="keyword">unsigned</span> __int64)&amp;unk_202018, (__m128i)((<span class="keyword">unsigned</span> __int64)&amp;unk_202018 + <span class="number">0x8000</span>)));</span><br><span class="line">  <span class="built_in">memcpy</span>(&amp;unk_202018, v4, <span class="number">0x10000</span>uLL);</span><br><span class="line">  _mm_storeu_si128((__m128i *)&amp;unk_202018 + <span class="number">4097</span>, (__m128i)<span class="number">0L</span>L);</span><br><span class="line">  *(_QWORD *)((<span class="keyword">char</span> *)&amp;unk_202018 + <span class="number">65566</span>) = <span class="number">0L</span>L;</span><br><span class="line">  *((_WORD *)&amp;unk_202018 + <span class="number">32785</span>) = <span class="number">32764</span>;</span><br><span class="line">  *((_QWORD *)&amp;unk_202018 + <span class="number">8197</span>) = <span class="number">0L</span>L;</span><br><span class="line">  v5 = (<span class="keyword">char</span> *)&amp;unk_202018 + <span class="number">0x10000</span>;</span><br><span class="line">  <span class="built_in">free</span>(v4);</span><br><span class="line">  <span class="keyword">return</span> v5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以只读的方式打开一个二进制文件，这个文件必须是存在的，并且只能读不能写。那么a1中存放的应该是存在着的一个文件的路径以及文件名，该文件的指针名有v1保存。</li>
+<li>由fopen函数的功能可以得知，当a1所指的文件路径文件名不存在，或者由于其他原因无法正确打开文件时，fopen函数会返回null，对该文件的操作都是在文件正确打开的情况下进行。所以接下来判断v1是否为null，如果是null直接返回0，sub_CE0函数结束，如果不为null，即文件a1正常打开，那就继续执行。</li>
+<li>通过fseek函数将文件的内部位置指针定位到文件的末尾，偏移量为0，即文件内部指针（此时为v1）指向文件的最后。其中2表示SEEK_END文件结尾。</li>
+<li>通过ftell返回位置标识符的当前值，由v3保存。由于上面已经将标识位置的指针定位到了文件尾，所以这里的返回值应当是文件的总长度，即v3中保存了文件的长度。</li>
+<li>再次通过fseek将文件内部位置标识定位到文件头，即v2指向文件的开始。其中的0表示SEEK_SET文件开头。</li>
+<li>通过malloc函数开辟一段连续的内存，内存的首地址保存在v4中。</li>
+<li>利用memset函数，将v4所指向的连续的内存空间的值全部置为0。</li>
+<li>将a1所指示的文件中的全部内容读取到v4指向的内存空间中。其中v3为要读取文件的长度，上面已经将v3设定为a1文件的总长度，v2是开始读取的位置，上面代码中将v2定位文件开头，所以是将整个文件的内容读到v4中。</li>
+<li>用fclose关闭文件流。</li>
+<li>经查阅资料了解到，接下来的代码是SSE指令<ul>
+<li>_mm_unpacklo_epi64函数返回一个m128i的寄存器</li>
+<li>_mm_storeu_si128( _m128i *p, _m128i a);将__m128i 变量a的值存储到p所指定的变量中去</li>
+<li>memcpy函数从源v4所指的内存地址的起始位置开始拷贝0x10000uLL个字节到目标&amp;unk_202018所指的内存地址的起始位置中</li>
+</ul>
+</li>
+<li>经过一系列操作，最终返回v5，v5的值为(char *)&amp;unk_202018 + 0x10000;。</li>
+</ul>
+
       
     </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+	
+		<div>
+    
+	
+        
+	<div style="text-align:center;color: #c7c7c7;font-size:14px;">-------------End of this article<i class="fa fa-paw"></i>Thank you for your reading-------------
+	</div>
+    
+	
+
+</div>
+	
+	</div>
+
+    
+
+    
+      
+    
+    
+
     
 
 
 
-    
-    
-    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/逆向工程/" rel="tag"><i class="fa fa-tag"></i> 逆向工程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/gdb调试/" rel="next" title="gdb调试">
+                <i class="fa fa-chevron-left"></i> gdb调试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -1144,13 +1275,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'Basic_PHP'.length > 0
+      var isPost = '304号challenge_02'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'Basic_PHP'
+        var title = '304号challenge_02'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
