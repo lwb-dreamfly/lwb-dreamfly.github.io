@@ -360,6 +360,506 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/Basic-SQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/12/Basic-SQL/" class="post-title-link" itemprop="url">Basic_SQL</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 17:04:34" itemprop="dateCreated datePublished" datetime="2019-05-12T17:04:34+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-20 18:53:53" itemprop="dateModified" datetime="2019-05-20T18:53:53+08:00">2019-05-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;个人理解，SQL注入就是通过把能满足自己意愿的SQL命令插入到url或输入框中，提交给服务器，让数据库执行你的SQL语句，来得到你想要的数据，达到你想要的结果。经过广搜资料，了解到这道题需要的技术是SQL注入的一种：联合查询注入。</p>
+<h3 id="注入前分析"><a href="#注入前分析" class="headerlink" title="注入前分析"></a>注入前分析</h3><p>&emsp;&emsp;点击给的链接，跳转转到的是一个新闻查询界面，有一个查询输入框，所谓的SQL注入应该是在这个输入框中进行了。经过多此尝试，发现下面显示的新闻是根据你输入的字符串得到的。输入<code>a visual</code>能够得到<code>Create a visual language that...</code> 这么一条新闻，输入<code>a  visual</code> 啥都查询不到，因此可以确定，实现新闻查询的SQL语句采用了模糊查询，其模糊查询格式为<code>%输入的字符串%</code> ，其SQL语句可能是<code>select 标题，内容 from 新闻表 where 内容 like &#39;%输入的字符串%&#39;</code>。（在注入成功后，发现其SQL语句应该为<code>select title,content from news where content like &#39;%输入的字符串%&#39;</code>）</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/12/Basic-SQL/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+	
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/BabyXSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/12/BabyXSS/" class="post-title-link" itemprop="url">BabyXSS</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 12:19:33" itemprop="dateCreated datePublished" datetime="2019-05-12T12:19:33+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-20 18:50:48" itemprop="dateModified" datetime="2019-05-20T18:50:48+08:00">2019-05-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;感觉XSS攻击和SQL注入有异曲同工之妙~</p>
+<p>&emsp;&emsp;直接访问admin.php会提示没有admin权限：<br><img src="/images/BabyXSS/noflag.png" alt><br>第一反应是获取标志admin的cookie，然后修改本地的cookie，刷新页面，以此来获取flag。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/12/BabyXSS/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+	
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/Basic-PHP-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wenbo Lee">
+      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DreamFly">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/12/Basic-PHP-2/" class="post-title-link" itemprop="url">Basic_PHP_2</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 12:18:46" itemprop="dateCreated datePublished" datetime="2019-05-12T12:18:46+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-20 18:51:27" itemprop="dateModified" datetime="2019-05-20T18:51:27+08:00">2019-05-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;点开链接，先输入name然后进入正题，一开始以为第一个界面就有问题，研究了好一会儿没看出什么门道来。跳转界面后，出现了一个输入框和一段if…else分支的php代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'content'</span>]))&#123; </span><br><span class="line">    $filename = <span class="string">'config.php'</span>; </span><br><span class="line">    $content = $_GET[<span class="string">'content'</span>]; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(is_int(stripos($content, <span class="string">'php'</span>)) || is_int(stripos($content, <span class="string">'&lt;'</span>))) &#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'Invalid input'</span>; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">        file_put_contents($filename, $content); </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'Success'</span>; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/12/Basic-PHP-2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+	
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/深入理解计算机系统01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -405,12 +905,24 @@
                 
               
 
-              <time title="创建时间：2019-05-03 19:41:15 / 修改时间：21:55:44" itemprop="dateCreated datePublished" datetime="2019-05-03T19:41:15+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-03 19:41:15" itemprop="dateCreated datePublished" datetime="2019-05-03T19:41:15+08:00">2019-05-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-12 18:25:52" itemprop="dateModified" datetime="2019-05-12T18:25:52+08:00">2019-05-12</time>
               
             
           </span>
@@ -444,15 +956,7 @@
 
       
         
-          
-            <p>
-              计算机系统漫游&emsp;&emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。
-信息就是位+上下文&emsp;&emsp;源程序hello.c实际上是一个由0和1组成的位序列，这些位被组织成8个一组，称为字节。每个字节都表示程序中某个文本字符。大部分的线代系统使用ASCII标准来表示文本字符。
-&emsp;&emsp;系统中所有的信息——包括磁盘文件、存储器中的程序、存储器中存放的用户数据以及网络上传送的数据，都是由一串比特表示的。区分不同数据对象的唯一方法是读到这些数据对象时的上下文。
-程序被其他程序翻译成不同的格式&emsp;&emsp;一个程序中的每条语句都必须被其他程序转化为一系列的低级机器语言指令。然后这些指令按照可执行程序目标程序的格式打包，以二进制磁盘文件的形式存放。目标程序也称为可执行目标文件。
-&emsp;&emsp;gcc编译器从读取源程序到翻译成
-              ...
-            </p>
+          <h3 id="计算机系统漫游"><a href="#计算机系统漫游" class="headerlink" title="计算机系统漫游"></a>计算机系统漫游</h3><p>&emsp;&emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1441,482 +1945,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/汇编语言学习笔记03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/24/汇编语言学习笔记03/" class="post-title-link" itemprop="url">汇编语言学习笔记03</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-24 08:19:03 / 修改时间：15:59:36" itemprop="dateCreated datePublished" datetime="2019-04-24T08:19:03+08:00">2019-04-24</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="3-寄存器（内存访问）"><a href="#3-寄存器（内存访问）" class="headerlink" title="3.寄存器（内存访问）"></a>3.寄存器（内存访问）</h3><h4 id="3-1-内存中字的存储"><a href="#3-1-内存中字的存储" class="headerlink" title="3.1 内存中字的存储"></a>3.1 内存中字的存储</h4><p>&emsp;&emsp;CPU中，用16位寄存器来存储一个字。高8位存放高位字节，低8位存放低位字节。在内存中存储时，由于内存单元是字节单元（一个单元存放一个字节），则一个字要用两个地址连续的内存单元来存放，这个字的低位字节存放在低地址单元中，高位字节存放在高地址单元中。</p>
-<p>&emsp;&emsp;字单元：存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元组成。高地址内存单元中存放字型数据的高位字节，低地址内存单元中存放字型数据的低位字节。</p>
-<p>&emsp;&emsp;存储单元：可以存储以Byte，即8个二进制位。一个字单元占用两个存储单元。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/24/汇编语言学习笔记03/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<div>
-	
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/23/汇编语言学习笔记02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/23/汇编语言学习笔记02/" class="post-title-link" itemprop="url">汇编语言学习笔记02</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-23 09:02:46 / 修改时间：19:30:34" itemprop="dateCreated datePublished" datetime="2019-04-23T09:02:46+08:00">2019-04-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="2-寄存器"><a href="#2-寄存器" class="headerlink" title="2.寄存器"></a>2.寄存器</h3><p>&emsp;&emsp;一个典型的CPU由运算器、控制器、寄存器等器件构成，这些器件靠内部总线相连。内部总线实现CPU内部各个器件之间的联系，外部总线实现CPU和主板上其他器件的联系。在CPU中：</p>
-<ul>
-<li>运算器进行信息处理；</li>
-<li>寄存器进行信息存储；</li>
-<li>控制器控制各种器件进行工作；</li>
-<li>内部总线连接各种器件，在它们之间进行数据的传送。</li>
-</ul>
-<p>&emsp;&emsp;8086CPU有14个寄存器，分别是AX、BX、CX、DX、SI、DI、SP、BP、IP、CS、SS、DS、ES、PSW。</p>
-<h4 id="2-1通用寄存器"><a href="#2-1通用寄存器" class="headerlink" title="2.1通用寄存器"></a>2.1通用寄存器</h4><p>&emsp;&emsp;8086CPU的所有寄存器都是16位的，可以存放两个字节。AX、BX、CX、DX通常用来存放一般性数据，被称为通用寄存器。同时，AX可分为两个独立使用的8位寄存器AH和AL，AX的低8位（0-7）构成AL寄存器，高8位（8-15）构成，其他同理。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/23/汇编语言学习笔记02/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<div>
-	
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/汇编语言学习笔记01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wenbo Lee">
-      <meta itemprop="description" content="遇见最好的自己，然后狠狠拥抱你。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DreamFly">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/汇编语言学习笔记01/" class="post-title-link" itemprop="url">汇编语言学习笔记01</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-22 10:07:31 / 修改时间：20:33:56" itemprop="dateCreated datePublished" datetime="2019-04-22T10:07:31+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;打算今天开始系统性学习汇编语言，使用教材为王爽老师编写的《汇编语言（第三版）》，会将自己认为重要的知识点整理下来，以加深印象，且便于日后回顾查阅。</p>
-<h3 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h3><h4 id="1-1所谓汇编"><a href="#1-1所谓汇编" class="headerlink" title="1.1所谓汇编"></a>1.1所谓汇编</h4><p>&emsp;&emsp;机器语言是机器指令的集合，是一列二进制数字，相当难记忆，使用起来很麻烦，所以就诞生了汇编语言。汇编语言的主题是汇编指令，汇编指令是机器指令便于记忆的书写格式。我们可以用汇编指令编写源程序，然后通过编译器将汇编指令转换成机器指令，由计算机最终执行。</p>
-<h4 id="1-2汇编语言的组成"><a href="#1-2汇编语言的组成" class="headerlink" title="1.2汇编语言的组成"></a>1.2汇编语言的组成</h4><p>（1）汇编指令：机器码的助记符，有对应的机器码。</p>
-<p>（2）伪指令：没有对应的机器码，由编译器执行，计算机并不执行。</p>
-<p>（3）其他符号：入+、-、*、/等，由编译器识别，没有对应的机器码。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/22/汇编语言学习笔记01/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<div>
-	
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1966,7 +1994,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2656,7 +2684,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("深入理解计算机系统01");titles.push("304号challenge_03");titles.push("304号challenge_02");titles.push("gdb调试");titles.push("BasicFileInclude");titles.push("304号challenge_01");titles.push("虚拟机网络问题");titles.push("汇编语言学习笔记03");titles.push("汇编语言学习笔记02");titles.push("汇编语言学习笔记01");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Basic_SQL");titles.push("BabyXSS");titles.push("Basic_PHP_2");titles.push("深入理解计算机系统01");titles.push("304号challenge_03");titles.push("304号challenge_02");titles.push("gdb调试");titles.push("BasicFileInclude");titles.push("304号challenge_01");titles.push("虚拟机网络问题");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="计算机系统漫游&amp;emsp;&amp;emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。 信息就是位+上下文&amp;emsp;&amp;emsp;源程序hello.c实际上是一个由0和1组成的位序列，这">
+  <meta name="description" content="计算机系统漫游&amp;emsp;&amp;emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解计算机系统01">
 <meta property="og:url" content="http://yoursite.com/2019/05/03/深入理解计算机系统01/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="计算机系统漫游&amp;emsp;&amp;emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。 信息就是位+上下文&amp;emsp;&amp;emsp;源程序hello.c实际上是一个由0和1组成的位序列，这">
+<meta property="og:description" content="计算机系统漫游&amp;emsp;&amp;emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-03T13:55:44.500Z">
+<meta property="og:updated_time" content="2019-05-12T10:25:52.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解计算机系统01">
-<meta name="twitter:description" content="计算机系统漫游&amp;emsp;&amp;emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。 信息就是位+上下文&amp;emsp;&amp;emsp;源程序hello.c实际上是一个由0和1组成的位序列，这">
+<meta name="twitter:description" content="计算机系统漫游&amp;emsp;&amp;emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。">
 
 
 
@@ -404,12 +404,24 @@
                 
               
 
-              <time title="创建时间：2019-05-03 19:41:15 / 修改时间：21:55:44" itemprop="dateCreated datePublished" datetime="2019-05-03T19:41:15+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-03 19:41:15" itemprop="dateCreated datePublished" datetime="2019-05-03T19:41:15+08:00">2019-05-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-12 18:25:52" itemprop="dateModified" datetime="2019-05-12T18:25:52+08:00">2019-05-12</time>
               
             
           </span>
@@ -450,6 +462,7 @@
 
       
         <h3 id="计算机系统漫游"><a href="#计算机系统漫游" class="headerlink" title="计算机系统漫游"></a>计算机系统漫游</h3><p>&emsp;&emsp;计算机系统由硬件和系统软件组成，它们共同工作来运行应用程序。如果能够理解    底层计算机系统的本质以及如何影响应用程序，对我们的编程也有一定帮助，可以优化我们的代码，减少出乎意料的错误和系统的漏洞。本章节通过跟踪hello程序的生命周期来开始对系统知识的学习。</p>
+<a id="more"></a>
 <h4 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h4><p>&emsp;&emsp;源程序hello.c实际上是一个由0和1组成的位序列，这些位被组织成8个一组，称为字节。每个字节都表示程序中某个文本字符。大部分的线代系统使用ASCII标准来表示文本字符。</p>
 <p>&emsp;&emsp;系统中所有的信息——包括磁盘文件、存储器中的程序、存储器中存放的用户数据以及网络上传送的数据，都是由一串比特表示的。区分不同数据对象的唯一方法是读到这些数据对象时的上下文。</p>
 <h4 id="程序被其他程序翻译成不同的格式"><a href="#程序被其他程序翻译成不同的格式" class="headerlink" title="程序被其他程序翻译成不同的格式"></a>程序被其他程序翻译成不同的格式</h4><p>&emsp;&emsp;一个程序中的每条语句都必须被其他程序转化为一系列的低级机器语言指令。然后这些指令按照可执行程序目标程序的格式打包，以二进制磁盘文件的形式存放。目标程序也称为可执行目标文件。</p>
@@ -523,6 +536,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/12/Basic-PHP-2/" rel="prev" title="Basic_PHP_2">
+                Basic_PHP_2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -593,7 +610,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
