@@ -103,25 +103,24 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。 知识点铺垫 isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。 $_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。 md5(string)将一个字符串进行">
-<meta name="keywords" content="CTF">
+  <meta name="description" content="​    我又回来啦~~ ​    时隔近半年，我又回来啦。 ​    我一定好好遵守各种规章制度、安分守己！ ​    版权意识那是相当强，可不能随便玩火儿了、、、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basic_PHP">
-<meta property="og:url" content="http://yoursite.com/2019/04/21/Basic-PHP/index.html">
+<meta property="og:title" content="I am back">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/I-am-back/index.html">
 <meta property="og:site_name" content="DreamFly">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。 知识点铺垫 isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。 $_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。 md5(string)将一个字符串进行">
+<meta property="og:description" content="​    我又回来啦~~ ​    时隔近半年，我又回来啦。 ​    我一定好好遵守各种规章制度、安分守己！ ​    版权意识那是相当强，可不能随便玩火儿了、、、">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-21T13:27:01.120Z">
+<meta property="og:updated_time" content="2019-08-15T15:40:28.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic_PHP">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。 知识点铺垫 isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。 $_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。 md5(string)将一个字符串进行">
+<meta name="twitter:title" content="I am back">
+<meta name="twitter:description" content="​    我又回来啦~~ ​    时隔近半年，我又回来啦。 ​    我一定好好遵守各种规章制度、安分守己！ ​    版权意识那是相当强，可不能随便玩火儿了、、、">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/21/Basic-PHP/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/15/I-am-back/">
 
 
 
@@ -131,7 +130,7 @@
   };
 </script>
 
-  <title>Basic_PHP | DreamFly</title>
+  <title>I am back | DreamFly</title>
   
 
 
@@ -361,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/Basic-PHP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/I-am-back/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenbo Lee">
@@ -378,7 +377,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Basic_PHP
+          <h1 class="post-title" itemprop="name headline">I am back
 
               
             
@@ -404,7 +403,7 @@
                 
               
 
-              <time title="创建时间：2019-04-21 18:28:39 / 修改时间：21:27:01" itemprop="dateCreated datePublished" datetime="2019-04-21T18:28:39+08:00">2019-04-21</time>
+              <time title="创建时间：2019-08-15 23:37:18 / 修改时间：23:40:28" itemprop="dateCreated datePublished" datetime="2019-08-15T23:37:18+08:00">2019-08-15</time>
             
 
             
@@ -449,53 +448,10 @@
       
 
       
-        <p>&emsp;&emsp;思路通过题目页面中的php代码已经给出，顺着判断条件一步一步往下走，如果有一些基础经验的话会更好解决。</p>
-<h3 id="知识点铺垫"><a href="#知识点铺垫" class="headerlink" title="知识点铺垫"></a>知识点铺垫</h3><ol>
-<li>isset()在php中用来检测变量是否设置，该函数返回的是布尔值，即true/false。</li>
-<li>$_GET变量用于收集来自method=”get”的表单中的值。通过get方式提交数据，变量名和值都会出现在地址栏的URL中。</li>
-<li>md5(string)将一个字符串进行加密计算。</li>
-<li>sha1也是一种加密算法：安全哈希算法。</li>
-</ol>
-<h3 id="梳理代码"><a href="#梳理代码" class="headerlink" title="梳理代码"></a>梳理代码</h3><p>&emsp;&emsp;虽然没有学过php，但是有了上面的铺垫，再加上本身的编程基础，而且本题中的代码逻辑简单，理解起来还是很容易的。下面按照顺序简单梳理一下程序的内容。</p>
-<ul>
-<li>首先判断name、password和test这三个变量是否设置，若已经设置，继续向下执行；否则直接退出，结束程序。</li>
-<li>取出test并进行md5加密。</li>
-<li>若test经加密后与0相等，通过阶段1，继续向下；否则结束。</li>
-<li>如果name与password的值相等，结束。若不相等，,则继续向下执行。</li>
-<li>如果name与password经sha1加密后相等，给出flag，否则退出当前脚本。</li>
-</ul>
-<p>&emsp;&emsp;总结下来就是，需要设置好name、password和test这三个变量，test应满足经md5加密后与0相等，name与password应满足本身值不相同但经过sha1加密后相同。</p>
-<h3 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h3><p>&emsp;&emsp;经过上面的分析，解题的方法已经很明确了，就是寻找一个经md5加密后与0相等的字符串，还要寻找两个本身值不相同，但是经过sha1加密后相等的字符串。</p>
-<p>&emsp;&emsp;先从test开始入手，经查阅知，<strong>只要一个字符串md5加密后32位密文的开头为0e，即可使md5(string)==’0’成立</strong>，这样字符串有不少，简单列举几个，经测试都有效：</p>
-<table>
-<thead>
-<tr>
-<th>字符串</th>
-<th>md5加密后（32位）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>240610708</td>
-<td>0e462097431906509019562988736854</td>
-</tr>
-<tr>
-<td>aabg7XSs</td>
-<td>0e087386482136013740957780965295</td>
-</tr>
-<tr>
-<td>aabC9RqS</td>
-<td>0e041022518165728065344349536299</td>
-</tr>
-<tr>
-<td>s1836677006a</td>
-<td>0e481036490867661113260034900752</td>
-</tr>
-</tbody>
-</table>
-<p>&emsp;&emsp;<strong>sha1()函数要求传入的参数是字符串类型，如果传入两个数组类型，结果就都是FALSE,就相等了</strong>，这样name与password的解决方法也有了。</p>
-<p>&emsp;&emsp;通过get方式提交数据，直接在URL中追加变量和属性即可，于是构造如下地址：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//123.207.149.64:23331/feature/?name[]=1&amp;password[]=2&amp;test=s1836677006a</span></span><br></pre></td></tr></table></figure></p>
-<p>正常访问即可获得flag。 </p>
+        <p>​    <strong>我又回来啦~~</strong></p>
+<p>​    时隔近半年，我又回来啦。</p>
+<p>​    我一定好好遵守各种规章制度、安分守己！</p>
+<p>​    版权意识那是相当强，可不能随便玩火儿了、、、</p>
 
       
     </div>
@@ -534,12 +490,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
-          
-        </div>
-      
 
       
       
@@ -549,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/Reverse-sign-in/" rel="next" title="Reverse_sign_in">
-                <i class="fa fa-chevron-left"></i> Reverse_sign_in
+              <a href="/2019/05/12/Basic-SQL/" rel="next" title="Basic_SQL">
+                <i class="fa fa-chevron-left"></i> Basic_SQL
               </a>
             
           </div>
@@ -558,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/22/汇编语言学习笔记01/" rel="prev" title="汇编语言学习笔记01">
-                汇编语言学习笔记01 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -606,17 +552,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -728,23 +665,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点铺垫"><span class="nav-number">1.</span> <span class="nav-text">知识点铺垫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梳理代码"><span class="nav-number">2.</span> <span class="nav-text">梳理代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题过程"><span class="nav-number">3.</span> <span class="nav-text">解题过程</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -1330,13 +1250,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'Basic_PHP'.length > 0
+      var isPost = 'I am back'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'Basic_PHP'
+        var title = 'I am back'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
