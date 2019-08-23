@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[201903-1-小中大]]></title>
+    <url>%2F2019%2F08%2F23%2FCCF-%E5%B0%8F%E4%B8%AD%E5%A4%A7%2F</url>
+    <content type="text"><![CDATA[刷一波CCF~~ 题目要求 满分代码1234567891011121314151617181920212223242526272829303132import java.util.Scanner;public class Main &#123; public static void main(String[] args) &#123; int n; Scanner scanner=new Scanner(System.in); n=scanner.nextInt(); int[] a=new int[n]; int max,min; double t; for (int i = 0; i &lt; n ; i++) &#123; a[i]=scanner.nextInt(); &#125; if(a[0]&gt;a[n-1]) &#123; max=a[0]; min=a[n-1]; &#125; else &#123; max=a[n-1]; min=a[0]; &#125; if(n%2==1) &#123; t=a[(int)n/2]; &#125; else &#123; t=((double)a[(int)n/2]+(double)a[(int)n/2-1])/2.0; &#125; System.out.print(max+" "); if(t==(int)t) System.out.print((int)t); else System.out.print(String.format("%.1f",t)); System.out.println(" "+min); &#125;&#125; 注意事项 不能出现package，提交页面一再强调，不犯错还是没注意到，会提示运行错误。 注意中位数的取得方式 小心中位数的输出格式，整数直接输出，小数要保留一位。]]></content>
+      <tags>
+        <tag>CCF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[I am back]]></title>
     <url>%2F2019%2F08%2F15%2FI-am-back%2F</url>
     <content type="text"><![CDATA[​ 我又回来啦~~ ​ 时隔近半年，我又回来啦。 ​ 我一定好好遵守各种规章制度、安分守己！ ​ 版权意识那是相当强，可不能随便玩火儿了、、、]]></content>
